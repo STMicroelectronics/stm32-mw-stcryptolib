@@ -272,6 +272,3 @@ cmox_hash_retval_t cmox_hash_compute(cmox_hash_algo_t P_algo,
 #endif /* __cplusplus */
 
 #endif /* CMOX_HASH_H */
-
-
-

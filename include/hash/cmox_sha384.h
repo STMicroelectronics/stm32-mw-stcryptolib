@@ -98,6 +98,3 @@ cmox_hash_handle_t *cmox_sha384_construct(cmox_sha384_handle_t *P_pThis);
 #endif /* __cplusplus */
 
 #endif /* CMOX_SHA384_H */
-
-
-

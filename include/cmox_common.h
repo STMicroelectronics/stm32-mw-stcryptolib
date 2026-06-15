@@ -103,5 +103,3 @@ extern const cmox_modexp_func_t CMOX_MODEXP_PRIVATE_HIGHMEM;  /*!< Constant-time
 
 #endif /* CMOX_COMMON_H */
 
-
-

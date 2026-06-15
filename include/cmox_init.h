@@ -40,6 +40,9 @@ extern "C"
   */
 typedef uint32_t cmox_init_target_t;
 
+/* STM32 target Series are provided only for compatibility with STM32 Cryptographic library V4.x.x */
+/* the STM32 target Series will not be longer updated */
+
 #define CMOX_INIT_TARGET_AUTO       ((cmox_init_target_t)0x00000000)  /*!< Let the cryptographic library auto-detect running STM32 target Series */
 #define CMOX_INIT_TARGET_F0         ((cmox_init_target_t)0x46300000)  /*!< Select a STM32F0 Series target */
 #define CMOX_INIT_TARGET_F1         ((cmox_init_target_t)0x46310000)  /*!< Select a STM32F1 Series target */
@@ -59,6 +62,7 @@ typedef uint32_t cmox_init_target_t;
 #define CMOX_INIT_TARGET_L5         ((cmox_init_target_t)0x4C350000)  /*!< Select a STM32L5 Series target */
 #define CMOX_INIT_TARGET_U0         ((cmox_init_target_t)0x55300000)  /*!< Select a STM32U0 Series target */
 #define CMOX_INIT_TARGET_U3         ((cmox_init_target_t)0x55330000)  /*!< Select a STM32U3 Series target */
+#define CMOX_INIT_TARGET_U5         ((cmox_init_target_t)0x55350000)  /*!< Select a STM32U5 Series target */
 #define CMOX_INIT_TARGET_WB         ((cmox_init_target_t)0x57420000)  /*!< Select a STM32WB Series target */
 #define CMOX_INIT_TARGET_WBA        ((cmox_init_target_t)0x57424100)  /*!< Select a STM32WBA Series target */
 #define CMOX_INIT_TARGET_WL         ((cmox_init_target_t)0x574C0000)  /*!< Select a STM32WL Series target */
@@ -109,4 +113,3 @@ cmox_init_retval_t cmox_finalize(void *pArg);
 
 
 #endif /* CMOX_INIT_H */
-

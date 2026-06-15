@@ -410,6 +410,3 @@ cmox_cipher_handle_t *cmox_gcm_construct(cmox_gcm_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_GCM_H */
-
-
-

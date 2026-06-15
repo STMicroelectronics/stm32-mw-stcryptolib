@@ -84,6 +84,3 @@ typedef uint32_t cmox_hash_retval_t;
 #endif /* __cplusplus */
 
 #endif /* CMOX_HASH_RETVALS_H */
-
-
-

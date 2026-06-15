@@ -1,15 +1,15 @@
 {
     "bomFormat": "CycloneDX",
     "specVersion": "1.5",
-    "serialNumber": "urn:uuid:edffcfc1-57fe-4630-be40-20171af3b043",
+    "serialNumber": "urn:uuid:c4f50754-8543-43b8-a597-8f765eeffaf7",
     "version": 1,
     "metadata": {
-        "timestamp": "2026-02-12T16:21:04Z",
+        "timestamp": "2026-05-13T15:46:59Z",
         "tools": [
             {
                 "vendor": "Black Duck",
                 "name": "Hub",
-                "version": "2025.10.0"
+                "version": "2026.1.1"
             },
             {
                 "vendor": "CycloneDX",
@@ -24,12 +24,12 @@
         ],
         "component": {
             "type": "application",
-            "bom-ref": "9b122341-e3a4-4df3-914e-392163ea76a9",
+            "bom-ref": "63f0dad5-932c-49a7-9843-e53a02a704da",
             "supplier": {
-                "name": ""
+                "name": "Organization: STCryptoLib"
             },
             "name": "STCryptoLib",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "licenses": [
                 {
                     "license": {
@@ -47,7 +47,7 @@
                 },
                 {
                     "name": "BlackDuck-ComponentVersion",
-                    "value": "9b122341-e3a4-4df3-914e-392163ea76a9"
+                    "value": "63f0dad5-932c-49a7-9843-e53a02a704da"
                 }
             ]
         }
@@ -55,13 +55,13 @@
     "components": [
         {
             "type": "library",
-            "bom-ref": "cd39504c-caa8-4105-a70a-b34dd021b6f4",
+            "bom-ref": "63f0dad5-932c-49a7-9843-e53a02a704da---48c6026f-d460-41a3-b73a-d9655f53a55d",
             "supplier": {
-                "name": ""
+                "name": "Organization: STCryptoLib"
             },
             "author": "STMicroelectronics",
             "name": "STCryptoLib",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "licenses": [
                 {
                     "license": {
@@ -79,16 +79,16 @@
                 },
                 {
                     "name": "BlackDuck-ComponentVersion",
-                    "value": "cd39504c-caa8-4105-a70a-b34dd021b6f4"
+                    "value": "48c6026f-d460-41a3-b73a-d9655f53a55d"
                 }
             ]
         }
     ],
     "dependencies": [
         {
-            "ref": "9b122341-e3a4-4df3-914e-392163ea76a9",
+            "ref": "63f0dad5-932c-49a7-9843-e53a02a704da",
             "dependsOn": [
-                "cd39504c-caa8-4105-a70a-b34dd021b6f4"
+                "63f0dad5-932c-49a7-9843-e53a02a704da---48c6026f-d460-41a3-b73a-d9655f53a55d"
             ]
         }
     ]

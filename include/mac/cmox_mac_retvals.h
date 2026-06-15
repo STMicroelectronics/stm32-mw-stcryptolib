@@ -91,6 +91,3 @@ typedef uint32_t cmox_mac_retval_t;
 
 
 #endif /* CMOX_MAC_RETVALS_H */
-
-
-

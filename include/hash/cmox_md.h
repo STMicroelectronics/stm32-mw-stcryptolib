@@ -121,6 +121,3 @@ typedef struct
 #endif /* __cplusplus */
 
 #endif /* CMOX_MD_H */
-
-
-

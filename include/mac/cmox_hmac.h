@@ -253,6 +253,3 @@ cmox_mac_handle_t *cmox_hmac_construct(cmox_hmac_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_HMAC_H */
-
-
-

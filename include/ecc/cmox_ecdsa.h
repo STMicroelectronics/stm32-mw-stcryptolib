@@ -241,7 +241,7 @@ cmox_ecc_retval_t cmox_ecdsa_sign(cmox_ecc_handle_t     *P_pEccCtx,
   *                                @arg CMOX_ECC_FRP256V1_HIGHMEM
   * @param[in]  P_pPubKey       Buffer with the public key
   * @param[in]  P_PubKeyLen     Byte length of the public key
-  * @param[in]  P_pDigest       Buffer with the digest to sign
+  * @param[in]  P_pDigest       Buffer with the digest to verify
   * @param[in]  P_DigestLen     Byte length of the digest
   * @param[in]  P_pSignature    Buffer with the signature (concatenation of R and S)
   * @param[in]  P_SignatureLen  Byte length of the signature
@@ -289,6 +289,3 @@ cmox_ecc_retval_t cmox_ecdsa_verify(cmox_ecc_handle_t     *P_pEccCtx,
 #endif
 
 #endif /* CMOX_ECDSA_H */
-
-
-

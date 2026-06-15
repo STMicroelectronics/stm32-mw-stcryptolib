@@ -213,6 +213,3 @@ cmox_cipher_handle_t *cmox_ofb_construct(cmox_ofb_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_OFB_H */
-
-
-

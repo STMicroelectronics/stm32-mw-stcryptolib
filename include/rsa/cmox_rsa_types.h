@@ -130,6 +130,3 @@ typedef const struct cmox_rsa_pkcs1v22_hash_st *cmox_rsa_pkcs1v22_hash_t;
 
 
 #endif /* CMOX_RSA_TYPES_H */
-
-
-

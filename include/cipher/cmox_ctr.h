@@ -213,6 +213,3 @@ cmox_cipher_handle_t *cmox_ctr_construct(cmox_ctr_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_CTR_H */
-
-
-

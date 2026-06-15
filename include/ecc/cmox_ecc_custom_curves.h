@@ -88,6 +88,8 @@ extern const cmox_ecc_customCurve_opt_t cmox_ecc_customCurve_opt_high;
   * @retval     CMOX_ECC_ERR_MEMORY_FAIL
   * @warning    This function does not check if the parameters effectively form an elliptic curve,
   *             so the user must be sure about the parameters that are passed to the function
+  * @warning    The curve must be in Short-Weierstrass form and must have cofactor equal to 1.
+  * @warning    The curve can be used with ECDSA and ECDH algorithms only.
   */
 cmox_ecc_retval_t cmox_ecc_customCurveConstruct(cmox_ecc_handle_t *P_pEccCtx,
                                                 cmox_ecc_impl_t *P_pCurve,
@@ -120,6 +122,3 @@ void cmox_ecc_customCurveCleanup(cmox_ecc_handle_t *P_pEccCtx, cmox_ecc_impl_t *
 
 
 #endif /* CMOX_ECC_CUSTOM_CURVES_H */
-
-
-

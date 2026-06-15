@@ -136,6 +136,3 @@ extern "C"
 
 
 #endif /* CMOX_CRYPTO_H */
-
-
-

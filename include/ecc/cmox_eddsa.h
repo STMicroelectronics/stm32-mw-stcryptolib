@@ -169,6 +169,3 @@ cmox_ecc_retval_t cmox_eddsa_verify(cmox_ecc_handle_t     *P_pEccCtx,
 #endif
 
 #endif /* CMOX_EDDSA_H */
-
-
-

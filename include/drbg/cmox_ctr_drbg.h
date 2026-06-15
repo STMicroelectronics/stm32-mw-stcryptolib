@@ -174,6 +174,3 @@ cmox_drbg_handle_t *cmox_ctr_drbg_construct(cmox_ctr_drbg_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_CTR_DRBG_H */
-
-
-

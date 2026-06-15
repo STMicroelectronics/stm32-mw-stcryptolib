@@ -141,6 +141,3 @@ cmox_drbg_retval_t cmox_drbg_generate(cmox_drbg_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_DRBG_H */
-
-
-

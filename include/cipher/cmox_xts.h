@@ -190,6 +190,3 @@ cmox_cipher_handle_t *cmox_xts_construct(cmox_xts_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_XTS_H */
-
-
-

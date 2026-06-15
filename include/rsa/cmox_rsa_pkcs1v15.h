@@ -76,6 +76,8 @@ extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA512_256;
 
 /**
   * @defgroup CMOX_RSA_PKCS1V15_PUBLIC_METHODS RSA PKCS#1 v1.5 public method prototypes
+  * @warning RSA PKCS#1 v1.5 is kept for compatibility only. Please, for new applications, consider using the newer
+  *          RSA PKCS#1 v2.2, that is no susceptible to some side-channel attacks (e.g., Bleichenbacher attack).
   * @{
   */
 
@@ -144,6 +146,8 @@ cmox_rsa_retval_t cmox_rsa_pkcs1v15_verify(cmox_rsa_handle_t              *P_pRs
   * @param[in]   P_RandomLen     Random Length (in Bytes)
   * @param[out]  P_pOutput       Output encrypted buffer
   * @param[out]  P_pOutputLen    Output Length (in Bytes)
+  * @note        P_InputLen <= length(modulus) - 11
+  * @note        P_pRandom must contain at least (length(modulus) - P_InputLen - 3) not-null bytes
   * @retval      CMOX_RSA_SUCCESS                   Everything OK
   * @retval      CMOX_RSA_ERR_MATH_ALGO_MISMATCH    Mathematical function set is incompatible with current functionality
   * @retval      CMOX_RSA_ERR_MEXP_ALGO_MISMATCH    Modexp function set is not compatible with current functionality
@@ -200,6 +204,3 @@ cmox_rsa_retval_t cmox_rsa_pkcs1v15_decrypt(cmox_rsa_handle_t     *P_pRsaCtx,
 #endif /* __cplusplus */
 
 #endif /* CMOX_RSA_PKCS1V15_H */
-
-
-

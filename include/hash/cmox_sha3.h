@@ -156,6 +156,3 @@ cmox_hash_handle_t *cmox_shake256_construct(cmox_sha3_handle_t *P_pThis);
 #endif /* __cplusplus */
 
 #endif /* CMOX_SHA3_H */
-
-
-

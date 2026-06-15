@@ -6,11 +6,44 @@
     <environment name="STM32Cube">
       <stm32:pack type="MW" friendlyName="stcryptolib" shortDesc="STM32 Cryptographic library middleware">
         <relocation-info parent="middleware" layer="" element=""/>
+        <compatibility>
+          <release version="2.1.0">
+            <applicable-schema schemaType="sw-configuration" schemaVersion="3.8.0"/>
+            <applicable-api-group apiType="codegen-getters">
+              <applicable-api apiType="clockAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="DmaAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="EnvVarAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="ExtiAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="hwPlatformAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="NvicAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="peripheralsResourceManagerAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="pinoutAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="SWConfigurationAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="SWProjectAPI" apiVersion="1.0.0"/>
+            </applicable-api-group>
+          </release>
+          <release version="2.0.0">
+            <applicable-schema schemaType="sw-configuration" schemaVersion="3.7.0"/>
+            <applicable-api-group apiType="codegen-getters">
+              <applicable-api apiType="clockAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="DmaAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="EnvVarAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="ExtiAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="hwPlatformAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="NvicAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="peripheralsResourceManagerAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="pinoutAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="SWConfigurationAPI" apiVersion="1.0.0"/>
+              <applicable-api apiType="SWProjectAPI" apiVersion="1.0.0"/>
+            </applicable-api-group>
+          </release>
+        </compatibility>
       </stm32:pack>
     </environment>
   </environments>
   <description overview="README.md">STCryptoLib SW Pack</description>
   <url>https://developer.st.com/st-pack-server/api/v1/pack/</url>
+  <repository type="git">https://github.com/STMicroelectronics/stm32-mw-stcryptolib/tree/hal2</repository>
   <supportContact/>
   <ECCN>
     <ECCN-EU>NEC</ECCN-EU>
@@ -20,6 +53,9 @@
     <changelog id="Release Notes" name="Release_Notes.html"/>
   </changelogs>
   <releases>
+    <release version="2.1.0" date="2026-06-05">
+      - Add support of configuration.
+    </release>
     <release version="2.0.0" date="2026-03-13">
       - First official release of STCryptoLib (STM32 Cryptographic library) pack based on CMOX API and libraries v4.0.4.
     </release>
@@ -120,6 +156,9 @@
       <description>STM32CubeMX2 Configuration and Code Generation for the STM32 Cryptographic library (STCryptoLib) middleware</description>
       <environments>
         <environment name="STM32Cube">
+          <stm32:component>
+            <middleware-entry-point id="STCryptoLib" name="STCryptoLib" category="Security"/>
+          </stm32:component>
         </environment>
       </environments>
       <files>

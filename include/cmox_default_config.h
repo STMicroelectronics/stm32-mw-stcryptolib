@@ -358,5 +358,3 @@ extern "C"
 #endif /* __cplusplus */
 
 #endif /* CMOX_DEFAULT_CONFIG_H */
-
-

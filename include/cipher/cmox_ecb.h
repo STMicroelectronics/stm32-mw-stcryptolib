@@ -212,6 +212,3 @@ cmox_cipher_handle_t *cmox_ecb_construct(cmox_ecb_handle_t *P_pThis,
 #endif /* __cplusplus */
 
 #endif /* CMOX_ECB_H */
-
-
-

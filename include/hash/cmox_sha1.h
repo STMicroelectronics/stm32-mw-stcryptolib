@@ -98,6 +98,3 @@ cmox_hash_handle_t *cmox_sha1_construct(cmox_sha1_handle_t *P_pThis);
 #endif /* __cplusplus */
 
 #endif /* CMOX_SHA1_H */
-
-
-

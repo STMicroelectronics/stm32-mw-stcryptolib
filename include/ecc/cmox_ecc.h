@@ -22,12 +22,12 @@
 #include <stdlib.h>
 
 #include "ecc/cmox_ecc_retvals.h"
-#include "ecc/cmox_ecc_types.h"
 #if !defined(CMOX_DEFAULT_FILE)
 #include "cmox_default_config.h"
 #else
 #include CMOX_DEFAULT_FILE
 #endif /* CMOX_DEFAULT_FILE */
+#include "ecc/cmox_ecc_types.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -253,6 +253,3 @@ void cmox_ecc_cleanup(cmox_ecc_handle_t *P_pEccCtx);
 
 
 #endif /* CMOX_ECC_H */
-
-
-

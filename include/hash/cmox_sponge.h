@@ -79,6 +79,3 @@ typedef struct
 #endif /* __cplusplus */
 
 #endif /* CMOX_SPONGE_H */
-
-
-

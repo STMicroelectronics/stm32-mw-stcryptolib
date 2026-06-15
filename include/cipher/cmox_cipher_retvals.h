@@ -99,6 +99,3 @@ typedef uint32_t cmox_cipher_retval_t;
 #endif /* __cplusplus */
 
 #endif /* CMOX_CIPHER_RETVALS_H */
-
-
-

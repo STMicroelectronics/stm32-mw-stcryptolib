@@ -490,6 +490,3 @@ cmox_cipher_retval_t cmox_aead_decrypt(cmox_aead_algo_t P_algo,
 #endif /* __cplusplus */
 
 #endif /* CMOX_CIPHER_H */
-
-
-

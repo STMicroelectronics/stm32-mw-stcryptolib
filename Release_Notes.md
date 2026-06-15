@@ -15,6 +15,44 @@ More  documentation is available at [STCryptoLib SW Pack documentation](https://
 
 # Update History
 
+<label for="collapse-section2" aria-hidden="true">__2.1.0 / 05-June-2026__</label>
+<div>
+
+## Main Changes
+
+- Support of Config and Code generation features
+
+## Contents
+
+- Precompiled CMOX library optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, and Cortex-M85 cores.
+- Interfaces to access CMOX library functionalities.
+- Ready to use CMOX configuration files for fast and small profiles.
+
+## Known Limitations
+
+- None.
+
+## Development Toolchains and Compilers
+
+- IAR Embedded Workbench for ARM (EWARM) toolchain V9.60.3 + ST-LINK
+- MDK-ARM Keil uVision V5.42
+- STM32CubeIDE for Visual Studio Code (GCC13 compiler)
+- STM32CubeMX2 V1.0.1
+
+## Supported devices and boards
+
+- STM32C5 series.
+
+## Backward Compatibility
+
+- Fully compatible with previous version.
+
+## Dependencies
+
+- STM32C5xx HAL Drivers V2.0.0 or greater
+
+</div>
+
 <label for="collapse-section1" aria-hidden="true">__2.0.0 / 13-March-2026__</label>
 <div>
 
@@ -54,7 +92,7 @@ More  documentation is available at [STCryptoLib SW Pack documentation](https://
 
 
 
-For complete documentation on **STM32 Microcontrollers**, 
+For complete documentation on **STM32 Microcontrollers**,
 visit: [http://www.st.com/STM32](http://www.st.com/STM32)
 
 <abbr title="Based on template cx566953 version 2.1">Info</abbr>

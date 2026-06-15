@@ -20,6 +20,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
+#include "cmox_common.h"
 
 #ifdef __cplusplus
 extern "C"

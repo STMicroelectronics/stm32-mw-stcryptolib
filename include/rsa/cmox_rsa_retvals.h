@@ -67,6 +67,3 @@ typedef uint32_t cmox_rsa_retval_t;
 
 
 #endif /* CMOX_RSA_RETVALS_H */
-
-
-

@@ -212,6 +212,3 @@ cmox_ecc_retval_t cmox_sm2_verify(cmox_ecc_handle_t     *P_pEccCtx,
 #endif
 
 #endif /* CMOX_SM2_H */
-
-
-

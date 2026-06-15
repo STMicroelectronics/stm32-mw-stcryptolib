@@ -60,6 +60,3 @@ extern "C"
 #endif /* __cplusplus */
 
 #endif /* CMOX_CTA_H */
-
-
-

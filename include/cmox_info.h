@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    cmox_info.h
-  * @brief   This file exports symbols needed to use information module.
+  * @brief   This file provides the types used within the info module.
   ******************************************************************************
   * @attention
   *
@@ -31,7 +31,7 @@ extern "C"
   * @{
   */
 
-/** @addtogroup CMOX_INFO Information module
+/** @addtogroup CMOX_INFO Library information
   * @{
   */
 
@@ -64,6 +64,3 @@ void cmox_getInfos(cmox_info_st *pInfo);
 
 
 #endif /* CMOX_INFO_H */
-
-
-

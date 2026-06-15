@@ -43,30 +43,37 @@ extern "C"
 
 /**
   * @brief SHA1 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA1;
 /**
   * @brief SHA224 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA224;
 /**
   * @brief SHA256 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA256;
 /**
   * @brief SHA384 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA384;
 /**
   * @brief SHA512 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA512;
 /**
   * @brief SHA512/224 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA512_224;
 /**
   * @brief SHA512/256 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA512_256;
 
@@ -89,6 +96,7 @@ extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA512_256;
   * @param[in]   P_RandomLen     Random Length (in Bytes)
   * @param[out]  P_pSignature    Output signature
   * @param[out]  P_pSignatureLen Output signature Length (in Bytes)
+  * @note        P_RandomLen must be in the range [0; length(hash)], where `hash` is the chosen hash function
   * @retval      CMOX_RSA_SUCCESS                   Everything OK
   * @retval      CMOX_RSA_ERR_MATH_ALGO_MISMATCH    Mathematical function set is incompatible with current functionality
   * @retval      CMOX_RSA_ERR_MEXP_ALGO_MISMATCH    Modexp function set is not compatible with current functionality
@@ -153,6 +161,8 @@ cmox_rsa_retval_t cmox_rsa_pkcs1v22_verify(cmox_rsa_handle_t              *P_pRs
   * @param[in]   P_LabelLen      Label Length (in Bytes)
   * @param[out]  P_pOutput       Output encrypted buffer
   * @param[out]  P_pOutputLen    Output Length (in Bytes)
+  * @note        P_pRandom must have at least the same length of the digest length of the chosen hash function
+  * @note        P_InputLen <= length(modulus) - 2 * length(hash) - 2, where `hash` is the chosen hash function
   * @retval      CMOX_RSA_SUCCESS                   Everything OK
   * @retval      CMOX_RSA_ERR_MATH_ALGO_MISMATCH    Mathematical function set is incompatible with current functionality
   * @retval      CMOX_RSA_ERR_MEXP_ALGO_MISMATCH    Modexp function set is not compatible with current functionality
@@ -220,6 +230,3 @@ cmox_rsa_retval_t cmox_rsa_pkcs1v22_decrypt(cmox_rsa_handle_t               *P_p
 #endif /* __cplusplus */
 
 #endif /* CMOX_RSA_PKCS1V22_H */
-
-
-

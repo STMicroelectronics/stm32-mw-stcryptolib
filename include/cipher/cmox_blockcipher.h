@@ -62,13 +62,13 @@ extern "C"
   */
 
 /**
- * @brief Block cipher algorithm type.
- *
- * @details
- * This type is defined as a pointer to a structure that contains the
- * functions needed for the specific algorithm, as defined internally
- * in the library.
- */
+  * @brief Block cipher algorithm type.
+  *
+  * @details
+  * This type is defined as a pointer to a structure that contains the
+  * functions needed for the specific algorithm, as defined internally
+  * in the library.
+  */
 typedef const struct cmox_blockcipher_vtableStruct_st *cmox_blockcipher_vtable_t;
 
 /**
@@ -100,6 +100,3 @@ typedef struct
 #endif /* __cplusplus */
 
 #endif /* CMOX_BLOCKCIPHER_H */
-
-
-

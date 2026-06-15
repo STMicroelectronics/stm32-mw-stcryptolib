@@ -554,5 +554,3 @@ extern "C"
 #endif /* __cplusplus */
 
 #endif /* CMOX_DEFAULT_DEFS_H */
-
-

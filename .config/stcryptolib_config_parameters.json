@@ -1,0 +1,1195 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "function": [],
+  "componentid": "Security::STM32CubeMX2 Config:STCryptoLib",
+  "version": "1.0.0",
+  "grammarVersion": "3.7.0",
+  "properties": {
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "info": {
+          "type": "object",
+          "title": "General information",
+          "properties": {
+            "version": {
+              "title": "Based on CMOX library version",
+              "type": "string",
+              "default": "4.0.4",
+              "actions": [
+                {
+                  "type": "disable",
+                  "condition": "true"
+                }
+              ]
+            }
+          }
+        },
+        "profile": {
+          "title": "Profile",
+          "type": "object",
+          "properties": {
+            "stcryptolib_profile": {
+              "title": "Profile selection",
+              "type": "string",
+              "oneOf": [
+                {
+                  "const": "fast_and_high",
+                  "title": "Fast and High",
+                  "description": "By default: fastest configurations possible."
+                },
+                {
+                  "const": "small_and_low",
+                  "title": "Small and Low",
+                  "description": "Smallest configurations possible."
+                },
+                {
+                  "const": "custom",
+                  "title": "Custom",
+                  "description": "To customize each item of the library."
+                }
+              ],
+              "default": "fast_and_high",
+              "description": "Optimizations and memory footprint of the library."
+            }
+          }
+        },
+        "core": {
+          "title": "Core",
+          "type": "object",
+          "properties": {
+            "basic": {
+              "type": "object",
+              "title": "Main features",
+              "properties": {
+                "aes_config": {
+                  "type": "string",
+                  "oneOf": [
+                    {
+                      "title": "Fast",
+                      "const": "fast"
+                    },
+                    {
+                      "title": "Small",
+                      "const": "small"
+                    }
+                  ],
+                  "title": "AES implementation",
+                  "default": "fast",
+                  "actions": [
+                    {
+                      "type": "set",
+                      "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                      "computed": {
+                        "const": "small"
+                      }
+                    },
+                    {
+                      "type": "set",
+                      "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                      "computed": {
+                        "const": "fast"
+                      }
+                    },
+                    {
+                      "type": "disable",
+                      "condition": "$profile.stcryptolib_profile != 'custom'"
+                    }
+                  ]
+                },
+                "gcm_config": {
+                  "type": "string",
+                  "oneOf": [
+                    {
+                      "title": "Fast",
+                      "const": "fast"
+                    },
+                    {
+                      "title": "Small",
+                      "const": "small"
+                    }
+                  ],
+                  "title": "GCM implementation",
+                  "default": "fast",
+                  "actions": [
+                    {
+                      "type": "set",
+                      "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                      "computed": {
+                        "const": "fast"
+                      }
+                    },
+                    {
+                      "type": "set",
+                      "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                      "computed": {
+                        "const": "small"
+                      }
+                    },
+                    {
+                      "type": "disable",
+                      "condition": "$profile.stcryptolib_profile != 'custom'"
+                    }
+                  ]
+                },
+                "math_customization": {
+                  "type": "object",
+                  "title": "Math customization (implementation)",
+                  "actions": [
+                    {
+                      "type": "disable",
+                      "condition": "$profile.stcryptolib_profile != 'custom'"
+                    }
+                  ],
+                  "properties": {
+                    "rsa_config": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "Fast",
+                          "const": "fast"
+                        },
+                        {
+                          "title": "Small",
+                          "const": "small"
+                        }
+                      ],
+                      "title": "RSA implementation",
+                      "default": "fast",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "fast"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "small"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "ecc_256_config": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "Fast",
+                          "const": "fast"
+                        },
+                        {
+                          "title": "Small",
+                          "const": "small"
+                        },
+                        {
+                          "const": "super_fast_256",
+                          "title": "Super Fast 256"
+                        }
+                      ],
+                      "title": "ECC 256 bits curves implementation",
+                      "default": "super_fast_256",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "super_fast_256"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "small"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "ecc_128_config": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "Fast",
+                          "const": "fast"
+                        },
+                        {
+                          "title": "Small",
+                          "const": "small"
+                        }
+                      ],
+                      "title": "ECC 128 bits multiple curves implementation",
+                      "default": "fast",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "fast"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "small"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "ecc_curves_config": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "Fast",
+                          "const": "fast"
+                        },
+                        {
+                          "title": "Small",
+                          "const": "small"
+                        }
+                      ],
+                      "title": "ECC curves implementation",
+                      "default": "fast",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "fast"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "small"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "ecc_configurations": {
+                  "type": "object",
+                  "title": "ECC RAM usage",
+                  "actions": [
+                    {
+                      "type": "disable",
+                      "condition": "$profile.stcryptolib_profile != 'custom'"
+                    }
+                  ],
+                  "properties": {
+                    "ed25519_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        },
+                        {
+                          "title": "Optimized High",
+                          "const": "optimized_high"
+                        }
+                      ],
+                      "title": "EDWARDS Ed25519 ECC curves",
+                      "default": "optimized_high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "optimized_high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "ed448_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "EDWARDS Ed448 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "nist_r_p_224_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "NIST-R P-224 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "nist_r_p_256_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "NIST-R P-256 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "nist_r_p_384_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "NIST-R P-384 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "nist_r_p_521_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "NIST-R P-521 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "nist_r_k_p_256_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "NIST-K P-256 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_160_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-160 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_192_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-192 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_224_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-224 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_256_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-256 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_320_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-320 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_384_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-384 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_r_p_512_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-R P-512 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_160_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-160 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_192_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-192 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_224_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-224 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_256_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-256 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_320_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-320 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_384_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-512 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "brainpool_t_p_512_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "BRAINPOOL-T P-512 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "anssi_p_256": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "ANSSI P-256 ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "oscca_256_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "OSCCA 256 bit ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    },
+                    "oscca_256_test_ecc": {
+                      "type": "string",
+                      "oneOf": [
+                        {
+                          "title": "High",
+                          "const": "high"
+                        },
+                        {
+                          "title": "Low",
+                          "const": "low"
+                        }
+                      ],
+                      "title": "OSCCA 256 bit test ECC curves",
+                      "default": "high",
+                      "actions": [
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                          "computed": {
+                            "const": "high"
+                          }
+                        },
+                        {
+                          "type": "set",
+                          "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                          "computed": {
+                            "const": "low"
+                          }
+                        },
+                        {
+                          "type": "disable",
+                          "condition": "$profile.stcryptolib_profile != 'custom'"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "rsa_config": {
+                  "type": "string",
+                  "oneOf": [
+                    {
+                      "title": "High",
+                      "const": "high"
+                    },
+                    {
+                      "title": "Middle",
+                      "const": "middle"
+                    },
+                    {
+                      "title": "Low",
+                      "const": "low"
+                    }
+                  ],
+                  "title": "RSA implementation",
+                  "default": "high",
+                  "description": "Modular exponentiation implementation for private operations - memory usage.",
+                  "actions": [
+                    {
+                      "type": "set",
+                      "condition": "$profile.stcryptolib_profile == 'fast_and_high'",
+                      "computed": {
+                        "const": "high"
+                      }
+                    },
+                    {
+                      "type": "set",
+                      "condition": "$profile.stcryptolib_profile == 'small_and_low'",
+                      "computed": {
+                        "const": "low"
+                      }
+                    },
+                    {
+                      "type": "disable",
+                      "condition": "$profile.stcryptolib_profile != 'custom'"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

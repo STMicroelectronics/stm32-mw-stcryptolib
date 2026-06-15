@@ -72,6 +72,3 @@ cmox_utils_retval_t cmox_utils_compare(const uint8_t *P_pBuf1,
 #endif /* __cplusplus */
 
 #endif  /* CMOX_UTILS_COMPARE_H */
-
-
-

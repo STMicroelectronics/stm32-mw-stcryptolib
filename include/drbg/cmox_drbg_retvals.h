@@ -113,6 +113,3 @@ typedef uint32_t cmox_drbg_retval_t;
 
 
 #endif /* CMOX_DRBG_RETVALS_H */
-
-
-

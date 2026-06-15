@@ -123,6 +123,3 @@ cmox_ecc_retval_t cmox_ecdh(cmox_ecc_handle_t     *P_pEccCtx,
 #endif
 
 #endif /* CMOX_ECDH_H */
-
-
-

@@ -278,6 +278,3 @@ cmox_mac_retval_t cmox_mac_verify(cmox_mac_algo_t P_algo,
 #endif /* __cplusplus */
 
 #endif /* CMOX_MAC_H */
-
-
-

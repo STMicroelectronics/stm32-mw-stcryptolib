@@ -120,6 +120,3 @@ cmox_hash_handle_t *cmox_sha512_256_construct(cmox_sha512_handle_t *P_pThis);
 #endif /* __cplusplus */
 
 #endif /* CMOX_SHA512_H */
-
-
-

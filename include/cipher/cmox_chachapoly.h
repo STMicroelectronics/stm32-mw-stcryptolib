@@ -145,6 +145,3 @@ cmox_cipher_handle_t *cmox_chachapoly_construct(cmox_chachapoly_handle_t *P_pThi
 #endif /* __cplusplus */
 
 #endif /* CMOX_CHACHA20_POLY1305_H */
-
-
-

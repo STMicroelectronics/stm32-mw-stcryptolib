@@ -56,6 +56,3 @@ typedef uint32_t cmox_utils_retval_t;
 
 
 #endif /* CMOX_UTILS_RETVALS_H */
-
-
-

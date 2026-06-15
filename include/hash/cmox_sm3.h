@@ -99,6 +99,3 @@ cmox_hash_handle_t *cmox_sm3_construct(cmox_sm3_handle_t *P_pThis);
 
 
 #endif /* CMOX_SM3_H */
-
-
-

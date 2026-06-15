@@ -23,7 +23,7 @@
 extern "C" {
 #endif
 
-/* origin-pack: STMicroelectronics::stcryptolib@2.0.0 */
+/* origin-pack: STMicroelectronics::stcryptolib@2.1.0 */
 /* file-format: 1.0.0 */
 
 /* Device headers and defines */

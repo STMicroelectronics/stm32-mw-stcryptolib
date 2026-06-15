@@ -169,6 +169,3 @@ cmox_rsa_retval_t cmox_rsa_setKeyCRTwithFACM(cmox_rsa_key_t *P_pPrivKey,
 
 
 #endif /* CMOX_RSA_H */
-
-
-

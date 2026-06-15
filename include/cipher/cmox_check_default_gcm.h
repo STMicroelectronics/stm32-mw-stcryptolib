@@ -53,6 +53,3 @@ extern "C"
 
 
 #endif /* CMOX_CHECK_DEFAULT_GCM_H */
-
-
-
