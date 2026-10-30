@@ -74,6 +74,17 @@ extern "C"
   * @}
   */
 
+/** @defgroup CMOX_KDF KDF module
+  * @{
+  */
+
+#include "kdf/cmox_hkdf.h"
+#include "kdf/cmox_x963_kdf.h"
+
+/**
+  * @}
+  */
+
 /** @defgroup CMOX_RSA RSA module
   * @{
   */
@@ -90,6 +101,23 @@ extern "C"
 #include "ecc/cmox_eddsa.h"
 #include "ecc/cmox_sm2.h"
 #include "ecc/cmox_ecdh.h"
+/**
+  * @}
+  */
+
+/** @defgroup CMOX_PQC PQC module
+  * @{
+  */
+#include "pqc/cmox_pqc_kem.h"
+#include "pqc/cmox_pqc_dsa.h"
+/**
+  * @}
+  */
+
+/** @defgroup CMOX_HBS HBS module
+  * @{
+  */
+#include "hbs/cmox_hbs.h"
 /**
   * @}
   */
@@ -117,7 +145,6 @@ extern "C"
 /**
   * @}
   */
-
 /** @defgroup CMOX_INIT Initialization module
   *  @{
   */

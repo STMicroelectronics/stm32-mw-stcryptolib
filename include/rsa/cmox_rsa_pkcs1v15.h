@@ -69,6 +69,22 @@ extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA512_224;
   * @brief SHA512/256 Hash structure for the RSA PKCS#1 v1.5 functions.
   */
 extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA512_256;
+/**
+  * @brief SHA3/224 Hash structure for the RSA PKCS#1 v1.5 functions
+  */
+extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA3_224;
+/**
+  * @brief SHA3/256 Hash structure for the RSA PKCS#1 v1.5 functions
+  */
+extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA3_256;
+/**
+  * @brief SHA3/384 Hash structure for the RSA PKCS#1 v1.5 functions
+  */
+extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA3_384;
+/**
+  * @brief SHA3/512 Hash structure for the RSA PKCS#1 v1.5 functions
+  */
+extern const cmox_rsa_pkcs1v15_hash_t CMOX_RSA_PKCS1V15_HASH_SHA3_512;
 
 /**
   * @}

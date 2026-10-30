@@ -48,6 +48,7 @@ typedef uint32_t cmox_ecc_retval_t;
 #define CMOX_ECC_ERR_INVALID_SIGNATURE  ((cmox_ecc_retval_t)0x00060009) /*!< Invalid Signature value */
 #define CMOX_ECC_ERR_WRONG_RANDOM       ((cmox_ecc_retval_t)0x0006000B) /*!< Random not compliant with the API (Recall with other random material) */
 #define CMOX_ECC_ERR_MEMORY_FAIL        ((cmox_ecc_retval_t)0x0006000C) /*!< Not enough memory */
+#define CMOX_ECC_ERR_NO_ALT_IMPL        ((cmox_ecc_retval_t)0x0006000D) /*!< alternative implementation function not implemented */
 #define CMOX_ECC_ERR_MATHCURVE_MISMATCH ((cmox_ecc_retval_t)0x0006000E) /*!< Math customization not supported by current ECC curve */
 #define CMOX_ECC_ERR_ALGOCURVE_MISMATCH ((cmox_ecc_retval_t)0x0006000F) /*!< ECC curve not supported by current functionality */
 #define CMOX_ECC_AUTH_SUCCESS           ((cmox_ecc_retval_t)0x0006C726) /*!< ECC signature successful verification */

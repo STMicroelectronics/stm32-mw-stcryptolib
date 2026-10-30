@@ -48,6 +48,7 @@ typedef uint32_t cmox_rsa_retval_t;
 #define CMOX_RSA_ERR_WRONG_DECRYPTION     ((cmox_rsa_retval_t)0x0005000A) /*!< RSA invalid decryption, due to mismatch between private key and input */
 #define CMOX_RSA_ERR_WRONG_RANDOM         ((cmox_rsa_retval_t)0x0005000B) /*!< Random not compliant with the API (Recall with other random material) */
 #define CMOX_RSA_ERR_MEMORY_FAIL          ((cmox_rsa_retval_t)0x0005000C) /*!< Not enough memory */
+#define CMOX_RSA_ERR_NO_ALT_IMPL          ((cmox_rsa_retval_t)0x0005000D) /*!< alternative implementation function not implemented */
 #define CMOX_RSA_ERR_MATH_ALGO_MISMATCH   ((cmox_rsa_retval_t)0x00050010) /*!< Math customization not supported by current functionality */
 #define CMOX_RSA_ERR_MEXP_ALGO_MISMATCH   ((cmox_rsa_retval_t)0x00050011) /*!< Modexp function not supported by current functionality */
 #define CMOX_RSA_AUTH_SUCCESS             ((cmox_rsa_retval_t)0x0005C726) /*!< RSA signature successful verification */

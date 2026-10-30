@@ -20,6 +20,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
+#include "cmox_common.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -32,6 +33,7 @@ extern "C"
   */
 
 /** @addtogroup CMOX_INIT Initialization module
+    @brief The cmox initialization is only needed for backward compatibility with STM32 Crypographic V4
   * @{
   */
 
@@ -60,6 +62,7 @@ typedef uint32_t cmox_init_target_t;
 #define CMOX_INIT_TARGET_L1         ((cmox_init_target_t)0x4C310000)  /*!< Select a STM32L1 Series target */
 #define CMOX_INIT_TARGET_L4         ((cmox_init_target_t)0x4C340000)  /*!< Select a STM32L4/4+ Series target */
 #define CMOX_INIT_TARGET_L5         ((cmox_init_target_t)0x4C350000)  /*!< Select a STM32L5 Series target */
+#define CMOX_INIT_TARGET_N6         ((cmox_init_target_t)0x4E360000)  /*!< Select a STM32N6 Series target */
 #define CMOX_INIT_TARGET_U0         ((cmox_init_target_t)0x55300000)  /*!< Select a STM32U0 Series target */
 #define CMOX_INIT_TARGET_U3         ((cmox_init_target_t)0x55330000)  /*!< Select a STM32U3 Series target */
 #define CMOX_INIT_TARGET_U5         ((cmox_init_target_t)0x55350000)  /*!< Select a STM32U5 Series target */
@@ -75,30 +78,24 @@ typedef struct
   void *pArg;                     /*!< User defined parameter that is transmitted to Low Level services */
 } cmox_init_arg_t;
 
-/**
-  * @brief Return value type for Initialization module.
-  */
-typedef uint32_t cmox_init_retval_t;    /*!< Initialization return value type */
 
-#define CMOX_INIT_SUCCESS       ((cmox_init_retval_t)0x00000000) /*!< Init operation successfully performed */
-#define CMOX_INIT_FAIL          ((cmox_init_retval_t)0x00000001) /*!< Init operation failed */
+extern cmox_init_retval_t cmox_ll_init(void *pArg);
+extern cmox_init_retval_t cmox_ll_deInit(void *pArg);
 
 /**
   * @brief          Initialize CMOX library.
   * @param          pInitArg Initialization parameter see @ref cmox_init_arg_t
-  * @note           pInitArg can be set to NULL: is equivalent to
-  *                   pInitArg->target = CMOX_INIT_TARGET_AUTO
-  *                   pInitArg->pArg = NULL
+  * @note           pInitArg User defined parameter that is transmitted to Low Level services
   * @retval         Initialization status: @ref CMOX_INIT_SUCCESS / @ref CMOX_INIT_FAIL
   */
-cmox_init_retval_t cmox_initialize(cmox_init_arg_t *pInitArg);
+static inline cmox_init_retval_t cmox_initialize(cmox_init_arg_t *pInitArg) { return CMOX_INIT_SUCCESS; }
 
 /**
   * @brief          Finalize CMOX library.
   * @param          pArg User defined parameter that is transmitted to Low Level services
   * @retval         Finalization status: @ref CMOX_INIT_SUCCESS / @ref CMOX_INIT_FAIL
   */
-cmox_init_retval_t cmox_finalize(void *pArg);
+static inline cmox_init_retval_t cmox_finalize(void *pArg) { return CMOX_INIT_SUCCESS; }
 
 /**
   * @}

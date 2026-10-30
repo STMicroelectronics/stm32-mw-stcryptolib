@@ -37,22 +37,11 @@ already available for usage in this template --}}
   {{!--Release Section to update manually in case of new updates--}}
   <releases>
     <release version="1.0.0" date="2026-03-13">
-      - link STM32CubeMX2 Config:CRC component
+      - remove STM32CubeMX2 Config:CRC component dependency
     </release>
   </releases>
   <conditions>
-    {{assign "conditions" (@root.pdscAPI.getAllPDSCConditionsWithFilters exclude="Core condition, Common APIs")~}}
-    <condition id="Core condition">
-      <description>Required dependency to HAL CRC</description>
-      <require Cclass="Device" Cgroup="STM32CubeMX2 Config" Csub="CRC"/>
-    </condition>
-    <condition id="Common APIs">
-      <description>Ensure STCryptoLib common APIs are selected before</description>
-      <require Cclass="Security" Cgroup="STCryptoLib" Csub="CMOX API"/>
-      {{!-- workaround --}}
-      <require condition="Core condition"/>
-    </condition>
-
+    {{assign "conditions" (@root.pdscAPI.getAllPDSCConditionsWithFilters)~}}
     {{{@root.conditions}}}
   </conditions>
   <components>

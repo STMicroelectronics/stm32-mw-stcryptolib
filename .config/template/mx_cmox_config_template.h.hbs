@@ -608,6 +608,30 @@ extern "C"
   */
 
 /**
+  * @defgroup MX_CMOX_PQC_GENERATED Generated PQC customizations
+  * @{
+  */
+
+/**
+  * @brief Flag indicating the selected implementation for PQC ML-DSA.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_SMALL
+  *        - @ref CMOX_PQC_FAST
+  */
+{{#if (or (eq profile.stcryptolib_profile 'fast_and_high')
+          (and (eq profile.stcryptolib_profile 'custom') (eq core.basic.pqc_ml_dsa_config 'fast'))
+          )}}
+#define CMOX_PQC_IMPLEMENTATION       CMOX_PQC_FAST
+ {{else if (or (eq profile.stcryptolib_profile 'small_and_low')
+              (and (eq profile.stcryptolib_profile 'custom') (eq core.basic.pqc_ml_dsa_config 'small'))
+          )}}
+#define CMOX_PQC_IMPLEMENTATION       CMOX_PQC_SMALL
+{{/if}}
+/**
+  * @}
+  */
+
+/**
   * @}
   */
 

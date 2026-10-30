@@ -51,15 +51,6 @@ typedef struct
 } cmox_rsa_handle_t;
 
 /**
-  * @brief Internal structure type for the RSA modular exponentiation function.
-  */
-struct cmox_rsa_intfuncStruct_t;
-/**
-  * @brief Public pointer type for the RSA modular exponentiation function.
-  */
-typedef struct cmox_rsa_intfuncStruct_t *cmox_rsa_intfunc_t;
-
-/**
   * @brief Internal structure type for the Fault Attacks countermeasure.
   */
 struct cmox_rsa_facmStruct_t;
@@ -69,12 +60,17 @@ struct cmox_rsa_facmStruct_t;
 typedef const struct cmox_rsa_facmStruct_t *cmox_rsa_facm_t;
 
 /**
+  * @brief Define the type for the identifier for STD/CRT modexp
+  */
+typedef uint32_t cmox_rsa_modexp_index_t;
+
+/**
   * @brief Structure to hold public or private key parameters.
   */
 typedef struct
 {
-  cmox_rsa_intfunc_t  f;          /*!< Function executing CRT/standard modexp */
-  size_t              mod_bitlen; /*!< Length (in bytes) of Modulus */
+  cmox_rsa_modexp_index_t hl_modexp_type;  /*!< code defining STD or CRT modexp */
+  size_t              mod_bitlen; /*!< Length (in bits) of Modulus */
 
   union
   {

@@ -65,6 +65,9 @@ typedef struct
   cmox_cipher_handle_t super;             /*!< General cipher handle */
   cmox_blockcipher_handle_t blockCipher;  /*!< Block cipher handle */
   uint32_t iv[CMOX_CIPHER_BLOCK_SIZE];    /*!< Buffer containing the Initialization Vector */
+  uint8_t ctr_buffer[16];                 /*!< Buffer containing unprocessed encrypted counter
+                                               (for bytestream support)*/
+  size_t first_buf_el;                  /*!< First element of the ctr_buffer to process */
 } cmox_ctr_handle_t;
 
 /**

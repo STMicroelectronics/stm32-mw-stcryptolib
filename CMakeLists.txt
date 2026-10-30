@@ -1,8 +1,8 @@
-# origin-pack: STMicroelectronics::stcryptolib@2.1.0
+# origin-pack: STMicroelectronics::stcryptolib@2.3.0
 # file-format: 1.0.0
-project(STMicroelectronics_stcryptolib_2_1_0)
+project(STMicroelectronics_stcryptolib_2_3_0)
 cmake_minimum_required(VERSION 3.30)
-add_library(STMicroelectronics_stcryptolib_2_1_0 INTERFACE)
+add_library(STMicroelectronics_stcryptolib_2_3_0 INTERFACE)
 
 # List of all CMSIS properties that influence conditions for this package
 if(NOT DEFINED CMSIS_Dcore)
@@ -33,153 +33,159 @@ endif()
 
 # Include Pre_Include_Global.h globally if needed
 if(CMSIS_Tcompiler STREQUAL "IAR")
-    target_compile_options(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "SHELL:--preinclude $<QUOTE>${CMAKE_CURRENT_LIST_DIR}/Pre_Include_Global.h$<QUOTE>")
+    target_compile_options(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "SHELL:--preinclude $<QUOTE>${CMAKE_CURRENT_LIST_DIR}/Pre_Include_Global.h$<QUOTE>")
 else()
-    target_compile_options(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "SHELL:-include $<QUOTE>${CMAKE_CURRENT_LIST_DIR}/Pre_Include_Global.h$<QUOTE>")
+    target_compile_options(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "SHELL:-include $<QUOTE>${CMAKE_CURRENT_LIST_DIR}/Pre_Include_Global.h$<QUOTE>")
 endif()
 
 
 
 # Enable all components in this package
-if(CMSIS_ENTIRE_STMicroelectronics_stcryptolib_2_1_0)
-  list(APPEND CMSIS_COMPONENTS_LIST "Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:Core#Cversion:4.0.4")
-  list(APPEND CMSIS_COMPONENTS_LIST "Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:CMOX API#Cversion:4.0.4")
+if(CMSIS_ENTIRE_STMicroelectronics_stcryptolib_2_3_0)
+  list(APPEND CMSIS_COMPONENTS_LIST "Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:Core#Cversion:5.0.0")
+  list(APPEND CMSIS_COMPONENTS_LIST "Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:CMOX API#Cversion:5.0.0")
 endif()
 
 # All conditions used by this package
 
-# condition: STMicroelectronics.stcryptolib.2.1.0
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0
+# description: 
 if((CMSIS_Dname MATCHES "STM32.*" AND CMSIS_Dvendor STREQUAL "STMicroelectronics:13"))
-  set(STMicroelectronics.stcryptolib.2.1.0 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0 0)
+  set(STMicroelectronics.stcryptolib.2.3.0 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:ARMCC GCC IAR
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:ARMCC GCC IAR
+# description: 
 if((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR"))
-  set(STMicroelectronics.stcryptolib.2.1.0_ARMCC_GCC_IAR "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_ARMCC_GCC_IAR enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_ARMCC_GCC_IAR "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_ARMCC_GCC_IAR enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_ARMCC_GCC_IAR 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_ARMCC_GCC_IAR 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:Common APIs
+# condition: STMicroelectronics.stcryptolib.2.3.0:Common APIs
 # description: Ensure STCryptoLib common APIs are selected before
-set(STMicroelectronics.stcryptolib.2.1.0_Common_APIs "$<NOT:$<STREQUAL:$<FILTER:${CMSIS_COMPONENTS_LIST},INCLUDE,.*Cclass:Security#.*Cgroup:STCryptoLib#.*Csub:CMOX API(#.*|$)>,>>")
-message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_Common_APIs enabled")
+set(STMicroelectronics.stcryptolib.2.3.0_Common_APIs "$<NOT:$<STREQUAL:$<FILTER:${CMSIS_COMPONENTS_LIST},INCLUDE,.*Cclass:Security#.*Cgroup:STCryptoLib#.*Csub:CMOX API(#.*|$)>,>>")
+message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_Common_APIs enabled")
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:Core condition
-# description: Required dependency to HAL CRC
-set(STMicroelectronics.stcryptolib.2.1.0_Core_condition "$<NOT:$<STREQUAL:$<FILTER:${CMSIS_COMPONENTS_LIST},INCLUDE,.*Cclass:Device#.*Cgroup:STM32 HAL#.*Csub:CRC(#.*|$)>,>>")
-message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_Core_condition enabled")
-
-
-# condition: STMicroelectronics.stcryptolib.2.1.0:Crypto Core
+# condition: STMicroelectronics.stcryptolib.2.3.0:Crypto Core
 # description: Ensure STCryptoLib Core was selected before
-set(STMicroelectronics.stcryptolib.2.1.0_Crypto_Core "$<NOT:$<STREQUAL:$<FILTER:${CMSIS_COMPONENTS_LIST},INCLUDE,.*Cclass:Security#.*Cgroup:STCryptoLib#.*Csub:Core(#.*|$)>,>>")
-message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_Crypto_Core enabled")
+set(STMicroelectronics.stcryptolib.2.3.0_Crypto_Core "$<NOT:$<STREQUAL:$<FILTER:${CMSIS_COMPONENTS_LIST},INCLUDE,.*Cclass:Security#.*Cgroup:STCryptoLib#.*Csub:Core(#.*|$)>,>>")
+message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_Crypto_Core enabled")
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:M0
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:M0
+# description: 
 if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M0")))
-  set(STMicroelectronics.stcryptolib.2.1.0_M0 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_M0 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_M0 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M0 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_M0 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_M0 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:M3
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:M3
+# description: 
 if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M3")))
-  set(STMicroelectronics.stcryptolib.2.1.0_M3 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_M3 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_M3 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M3 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_M3 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_M3 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:M33
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:M33
+# description: 
 if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M33")))
-  set(STMicroelectronics.stcryptolib.2.1.0_M33 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_M33 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_M33 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M33 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_M33 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_M33 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:M4
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:M4
+# description: 
 if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M4")))
-  set(STMicroelectronics.stcryptolib.2.1.0_M4 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_M4 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_M4 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M4 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_M4 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_M4 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:M7
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:M55
+# description: 
+if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M55")))
+  set(STMicroelectronics.stcryptolib.2.3.0_M55 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M55 enabled")
+else()
+  set(STMicroelectronics.stcryptolib.2.3.0_M55 0)
+endif()
+
+
+# condition: STMicroelectronics.stcryptolib.2.3.0:M7
+# description: 
 if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M7")))
-  set(STMicroelectronics.stcryptolib.2.1.0_M7 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_M7 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_M7 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M7 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_M7 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_M7 0)
 endif()
 
 
-# condition: STMicroelectronics.stcryptolib.2.1.0:M85
-# description:
+# condition: STMicroelectronics.stcryptolib.2.3.0:M85
+# description: 
 if(((CMSIS_Tcompiler STREQUAL "ARMCC" OR CMSIS_Tcompiler STREQUAL "GCC" OR CMSIS_Tcompiler STREQUAL "IAR") AND (CMSIS_Dvendor STREQUAL "STMicroelectronics:13" AND CMSIS_Dcore STREQUAL "Cortex-M85")))
-  set(STMicroelectronics.stcryptolib.2.1.0_M85 "1")
-  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.1.0_M85 enabled")
+  set(STMicroelectronics.stcryptolib.2.3.0_M85 "1")
+  message(DEBUG "CMSIS condition STMicroelectronics.stcryptolib.2.3.0_M85 enabled")
 else()
-  set(STMicroelectronics.stcryptolib.2.1.0_M85 0)
+  set(STMicroelectronics.stcryptolib.2.3.0_M85 0)
 endif()
 
 # Files and components in this package
-if("Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:Core#Cversion:4.0.4" IN_LIST CMSIS_COMPONENTS_LIST)  # STM32 Cryptographic library according to the Cortex-M architecture
-  message(DEBUG "Using component Security_STCryptoLib_Core_4_0_4")
-  target_compile_definitions(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Core_condition}:-DCMSIS_USE_Security_STCryptoLib_Core_4_0_4=1>")
-  if(EXISTS ${CMSIS_RTE_FOLDER}/Security/cmox_low_level.c)
-    target_sources(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Core_condition}:${CMSIS_RTE_FOLDER}/Security/cmox_low_level.c>")
-  else()
-    target_sources(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Core_condition}:${CMAKE_CURRENT_LIST_DIR}/interfaces/cmox_crc/cmox_low_level.c>")
-  endif()
-  target_link_libraries(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<$<AND:${STMicroelectronics.stcryptolib.2.1.0_Core_condition},${STMicroelectronics.stcryptolib.2.1.0_M0}>:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM0_CM0PLUS.a>")
-  target_link_libraries(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<$<AND:${STMicroelectronics.stcryptolib.2.1.0_Core_condition},${STMicroelectronics.stcryptolib.2.1.0_M3}>:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM3.a>")
-  target_link_libraries(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<$<AND:${STMicroelectronics.stcryptolib.2.1.0_Core_condition},${STMicroelectronics.stcryptolib.2.1.0_M33}>:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM33.a>")
-  target_link_libraries(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<$<AND:${STMicroelectronics.stcryptolib.2.1.0_Core_condition},${STMicroelectronics.stcryptolib.2.1.0_M4}>:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM4.a>")
-  target_link_libraries(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<$<AND:${STMicroelectronics.stcryptolib.2.1.0_Core_condition},${STMicroelectronics.stcryptolib.2.1.0_M7}>:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM7.a>")
-  target_link_libraries(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<$<AND:${STMicroelectronics.stcryptolib.2.1.0_Core_condition},${STMicroelectronics.stcryptolib.2.1.0_M85}>:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM85.a>")
+if("Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:Core#Cversion:5.0.0" IN_LIST CMSIS_COMPONENTS_LIST)  # STM32 Cryptographic library according to the Cortex-M architecture
+  message(DEBUG "Using component Security_STCryptoLib_Core_5_0_0")
+  target_compile_definitions(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "-DCMSIS_USE_Security_STCryptoLib_Core_5_0_0=1")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M0}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM0_CM0PLUS.a>")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M3}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM3.a>")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M33}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM33.a>")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M4}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM4.a>")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M55}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM55.a>")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M7}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM7.a>")
+  target_link_libraries(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_M85}:${CMAKE_CURRENT_LIST_DIR}/lib/libSTM32Cryptographic_CM85.a>")
 endif()
 
-if("Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:CMOX API#Cversion:4.0.4" IN_LIST CMSIS_COMPONENTS_LIST)  # Common STCryptoLib APIs
-  message(DEBUG "Using component Security_STCryptoLib_CMOX_API_4_0_4")
-  target_compile_definitions(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:-DCMSIS_USE_Security_STCryptoLib_CMOX_API_4_0_4=1>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/cipher>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/cipher/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/drbg>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/drbg/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/ecc>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/ecc/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/hash>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/hash/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/mac>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/mac/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/rsa>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/rsa/>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/utils>")
-  target_include_directories(STMicroelectronics_stcryptolib_2_1_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.1.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/utils/>")
+if("Cvendor:STMicroelectronics#Cclass:Security#Cgroup:STCryptoLib#Csub:CMOX API#Cversion:5.0.0" IN_LIST CMSIS_COMPONENTS_LIST)  # Common STCryptoLib APIs
+  message(DEBUG "Using component Security_STCryptoLib_CMOX_API_5_0_0")
+  target_compile_definitions(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:-DCMSIS_USE_Security_STCryptoLib_CMOX_API_5_0_0=1>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/cipher>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/cipher/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/drbg>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/drbg/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/ecc>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/ecc/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/hash>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/hash/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/hbs>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/hbs/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/kdf>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/kdf/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/mac>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/mac/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/pqc>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/pqc/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/rsa>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/rsa/>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/utils>")
+  target_include_directories(STMicroelectronics_stcryptolib_2_3_0 INTERFACE "$<${STMicroelectronics.stcryptolib.2.3.0_Crypto_Core}:${CMAKE_CURRENT_LIST_DIR}/include/utils/>")
 endif()
 

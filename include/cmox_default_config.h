@@ -105,8 +105,8 @@ extern "C"
 #define CMOX_RSA_MATH_FUNCS               CMOX_MATH_FUNCS_FAST
 
 /**
-  * @brief Flag indicating the default implementation for ECC 256 bits curves
-  *        low level mathematical functions.
+   * @brief Flag indicating the default implementation for ECC 256 bits curves
+   *        low level mathematical functions.
   * @note  Value can be
   *        - @ref CMOX_MATH_FUNCS_SMALL
   *        - @ref CMOX_MATH_FUNCS_FAST
@@ -115,8 +115,8 @@ extern "C"
 #define CMOX_ECC256_MATH_FUNCS            CMOX_MATH_FUNCS_SUPERFAST256
 
 /**
-  * @brief Flag indicating the default implementation for ECC 128 bits multiple curves
-  *        low level mathematical functions.
+   * @brief Flag indicating the default implementation for ECC 128 bits multiple curves
+   *        low level mathematical functions.
   * @note  Value can be
   *        - @ref CMOX_MATH_FUNCS_SMALL
   *        - @ref CMOX_MATH_FUNCS_FAST
@@ -124,8 +124,8 @@ extern "C"
 #define CMOX_ECC128MULT_MATH_FUNCS        CMOX_MATH_FUNCS_FAST
 
 /**
-  * @brief Flag indicating the default implementation for ECC curves not defined by the above
-  *        low level mathematical functions.
+   * @brief Flag indicating the default implementation for ECC curves not defined by the above
+   *        low level mathematical functions.
   * @note  Value can be
   *        * for Cortex-M0/Cortex-M0+ devices
   *         - @ref CMOX_MATH_FUNCS_SMALL
@@ -149,7 +149,7 @@ extern "C"
   */
 
 /**
-  * @brief Flag indicating the default implementation for EDWARDS Ed25519 ECC curves.
+   * @brief Flag indicating the default implementation for EDWARDS Ed25519 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_ED25519_OPT_LOWMEM
   *        - @ref CMOX_ECC_ED25519_HIGHMEM
@@ -157,7 +157,7 @@ extern "C"
   */
 #define CMOX_ECC_CURVE_ED25519       CMOX_ECC_ED25519_OPT_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for EDWARDS Ed448 ECC curves.
+   * @brief Flag indicating the default implementation for EDWARDS Ed448 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_ED448_LOWMEM
   *        - @ref CMOX_ECC_ED448_HIGHMEM
@@ -165,35 +165,35 @@ extern "C"
 #define CMOX_ECC_CURVE_ED448         CMOX_ECC_ED448_HIGHMEM
 
 /**
-  * @brief Flag indicating the default implementation for NIST-R P-224 ECC curves.
+   * @brief Flag indicating the default implementation for NIST-R P-224 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SECP224R1_LOWMEM
   *        - @ref CMOX_ECC_SECP224R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_SECP224R1     CMOX_ECC_SECP224R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for NIST-R P-256 ECC curves.
+   * @brief Flag indicating the default implementation for NIST-R P-256 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SECP256R1_LOWMEM
   *        - @ref CMOX_ECC_SECP256R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_SECP256R1     CMOX_ECC_SECP256R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for NIST-R P-384 ECC curves.
+   * @brief Flag indicating the default implementation for NIST-R P-384 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SECP384R1_LOWMEM
   *        - @ref CMOX_ECC_SECP384R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_SECP384R1     CMOX_ECC_SECP384R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for NIST-R P-521 ECC curves.
+   * @brief Flag indicating the default implementation for NIST-R P-521 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SECP521R1_LOWMEM
   *        - @ref CMOX_ECC_SECP521R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_SECP521R1     CMOX_ECC_SECP521R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for NIST-K P-256 ECC curves.
+   * @brief Flag indicating the default implementation for NIST-K P-256 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SECP256K1_LOWMEM
   *        - @ref CMOX_ECC_SECP256K1_HIGHMEM
@@ -201,98 +201,98 @@ extern "C"
 #define CMOX_ECC_CURVE_SECP256K1     CMOX_ECC_SECP256K1_HIGHMEM
 
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-160 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-160 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP160R1_LOWMEM
   *        - @ref CMOX_ECC_BPP160R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP160R1      CMOX_ECC_BPP160R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-192 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-192 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP192R1_LOWMEM
   *        - @ref CMOX_ECC_BPP192R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP192R1      CMOX_ECC_BPP192R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-224 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-224 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP224R1_LOWMEM
   *        - @ref CMOX_ECC_BPP224R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP224R1      CMOX_ECC_BPP224R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-256 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-256 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP256R1_LOWMEM
   *        - @ref CMOX_ECC_BPP256R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP256R1      CMOX_ECC_BPP256R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-320 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-320 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP320R1_LOWMEM
   *        - @ref CMOX_ECC_BPP320R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP320R1      CMOX_ECC_BPP320R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-384 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-384 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP384R1_LOWMEM
   *        - @ref CMOX_ECC_BPP384R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP384R1      CMOX_ECC_BPP384R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-R P-512 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-R P-512 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP512R1_LOWMEM
   *        - @ref CMOX_ECC_BPP512R1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP512R1      CMOX_ECC_BPP512R1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-160 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-160 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP160T1_LOWMEM
   *        - @ref CMOX_ECC_BPP160T1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP160T1      CMOX_ECC_BPP160T1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-192 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-192 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP192T1_LOWMEM
   *        - @ref CMOX_ECC_BPP192T1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP192T1      CMOX_ECC_BPP192T1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-224 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-224 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP224T1_LOWMEM
   *        - @ref CMOX_ECC_BPP224T1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP224T1      CMOX_ECC_BPP224T1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-256 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-256 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP256T1_LOWMEM
   *        - @ref CMOX_ECC_BPP256T1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP256T1      CMOX_ECC_BPP256T1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-320 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-320 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP320T1_LOWMEM
   *        - @ref CMOX_ECC_BPP320T1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP320T1      CMOX_ECC_BPP320T1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-384 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-384 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP384T1_LOWMEM
   *        - @ref CMOX_ECC_BPP384T1_HIGHMEM
   */
 #define CMOX_ECC_CURVE_BPP384T1      CMOX_ECC_BPP384T1_HIGHMEM
 /**
-  * @brief Flag indicating the default implementation for BRAINPOOL-T P-512 ECC curves.
+   * @brief Flag indicating the default implementation for BRAINPOOL-T P-512 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_BPP512T1_LOWMEM
   *        - @ref CMOX_ECC_BPP512T1_HIGHMEM
@@ -300,7 +300,7 @@ extern "C"
 #define CMOX_ECC_CURVE_BPP512T1      CMOX_ECC_BPP512T1_HIGHMEM
 
 /**
-  * @brief Flag indicating the default implementation for ANSSI P-256 ECC curves.
+   * @brief Flag indicating the default implementation for ANSSI P-256 ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_FRP256V1_LOWMEM
   *        - @ref CMOX_ECC_FRP256V1_HIGHMEM
@@ -308,7 +308,7 @@ extern "C"
 #define CMOX_ECC_CURVE_FRP256V1      CMOX_ECC_FRP256V1_HIGHMEM
 
 /**
-  * @brief Flag indicating the default implementation for OSCCA 256 bit ECC curves.
+   * @brief Flag indicating the default implementation for OSCCA 256 bit ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SM2_LOWMEM
   *        - @ref CMOX_ECC_SM2_HIGHMEM
@@ -316,7 +316,7 @@ extern "C"
 #define CMOX_ECC_CURVE_SM2           CMOX_ECC_SM2_HIGHMEM
 
 /**
-  * @brief Flag indicating the default implementation for OSCCA 256 bit test ECC curves.
+   * @brief Flag indicating the default implementation for OSCCA 256 bit test ECC curves.
   * @note  Value can be
   *        - @ref CMOX_ECC_SM2TEST_LOWMEM
   *        - @ref CMOX_ECC_SM2TEST_HIGHMEM
@@ -340,6 +340,25 @@ extern "C"
   *        - @ref CMOX_MODEXP_PRIVATE_HIGHMEM
   */
 #define CMOX_MODEXP_PRIVATE         CMOX_MODEXP_PRIVATE_HIGHMEM
+
+/**
+  * @}
+  */
+
+/**
+  * @defgroup CMOX_PQC_DEFAULT Default PQC customizations
+  * @{
+  */
+#define CMOX_PQC_FAST 0x01U
+
+#define CMOX_PQC_SMALL 0x02U
+
+
+#define CMOX_PQC_IMPLEMENTATION CMOX_PQC_SMALL
+
+/**
+  * @}
+  */
 
 /**
   * @}

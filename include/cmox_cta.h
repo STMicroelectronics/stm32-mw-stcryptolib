@@ -32,7 +32,6 @@ extern "C"
   * @defgroup CMOX_CTA CTA protection features
   * @{
   */
-
 /**
   * @brief Provides a label in order to move tables into RAM/CCM/TCM and being
   *        protected against Cache Timing Attacks (CTA).
@@ -50,7 +49,6 @@ extern "C"
 /**
   * @}
   */
-
 /**
   * @}
   */

@@ -7,19 +7,22 @@
       <stm32:pack type="MW" friendlyName="stcryptolib" shortDesc="STM32 Cryptographic library middleware">
         <relocation-info parent="middleware" layer="" element=""/>
         <compatibility>
+          <release version="2.3.0">
+            <applicable-schema schemaType="sw-configuration" schemaVersion="3.8.0"/>
+            <applicable-api-group apiType="codegen-getters">
+              <applicable-api apiType="SWConfigurationAPI" apiVersion="1.0.0"/>
+            </applicable-api-group>
+          </release>
+          <release version="2.2.0">
+            <applicable-schema schemaType="sw-configuration" schemaVersion="3.8.0"/>
+            <applicable-api-group apiType="codegen-getters">
+              <applicable-api apiType="SWConfigurationAPI" apiVersion="1.0.0"/>
+            </applicable-api-group>
+          </release>
           <release version="2.1.0">
             <applicable-schema schemaType="sw-configuration" schemaVersion="3.8.0"/>
             <applicable-api-group apiType="codegen-getters">
-              <applicable-api apiType="clockAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="DmaAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="EnvVarAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="ExtiAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="hwPlatformAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="NvicAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="peripheralsResourceManagerAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="pinoutAPI" apiVersion="1.0.0"/>
               <applicable-api apiType="SWConfigurationAPI" apiVersion="1.0.0"/>
-              <applicable-api apiType="SWProjectAPI" apiVersion="1.0.0"/>
             </applicable-api-group>
           </release>
           <release version="2.0.0">
@@ -43,7 +46,7 @@
   </environments>
   <description overview="README.md">STCryptoLib SW Pack</description>
   <url>https://developer.st.com/st-pack-server/api/v1/pack/</url>
-  <repository type="git">https://github.com/STMicroelectronics/stm32-mw-stcryptolib/tree/hal2</repository>
+  <repository type="git">https://github.com/STMicroelectronics/stcryptolib</repository>
   <supportContact/>
   <ECCN>
     <ECCN-EU>NEC</ECCN-EU>
@@ -53,6 +56,13 @@
     <changelog id="Release Notes" name="Release_Notes.html"/>
   </changelogs>
   <releases>
+    <release version="2.3.0" date="2026-09-25">
+      - Add PQC LM DSA configuration.
+      - Enhance code generation performance.
+    </release>
+    <release version="2.2.0" date="2026-07-03">
+      - Migrate CMOX library from V4 to V5 including PQC algorithms support.
+    </release>
     <release version="2.1.0" date="2026-06-05">
       - Add support of configuration.
     </release>
@@ -98,6 +108,10 @@
       <require condition="ARMCC GCC IAR"/>
       <require Dvendor="STMicroelectronics:13" Dcore="Cortex-M4"/>
     </condition>
+    <condition id="M55">
+      <require condition="ARMCC GCC IAR"/>
+      <require Dvendor="STMicroelectronics:13" Dcore="Cortex-M55"/>
+    </condition>
     <condition id="M7">
       <require condition="ARMCC GCC IAR"/>
       <require Dvendor="STMicroelectronics:13" Dcore="Cortex-M7"/>
@@ -105,10 +119,6 @@
     <condition id="M85">
       <require condition="ARMCC GCC IAR"/>
       <require Dvendor="STMicroelectronics:13" Dcore="Cortex-M85"/>
-    </condition>
-    <condition id="Core condition">
-      <description>Required dependency to HAL CRC</description>
-      <require Cclass="Device" Cgroup="STM32 HAL" Csub="CRC"/>
     </condition>
     <condition id="Crypto Core">
       <description>Ensure STCryptoLib Core was selected before</description>
@@ -152,7 +162,7 @@
   <!-- Components definition -->
   <components>
     <!-- STCryptoLib configuration -->
-    <component generator="stcryptolib_mx2codegen" Cclass="Security" Cgroup="STM32CubeMX2 Config" Csub="STCryptoLib" Cversion="1.0.0" condition="Common APIs">
+    <component generator="stcryptolib_mx2codegen" Cclass="Security" Cgroup="STM32CubeMX2 Config" Csub="STCryptoLib" Cversion="1.1.0" condition="Common APIs">
       <description>STM32CubeMX2 Configuration and Code Generation for the STM32 Cryptographic library (STCryptoLib) middleware</description>
       <environments>
         <environment name="STM32Cube">
@@ -172,17 +182,17 @@
       </files>
     </component>
     <!-- STCryptoLib compiled library -->
-    <component Cclass="Security" Cgroup="STCryptoLib" Csub="Core" Cversion="4.0.4" condition="Core condition">
+    <component Cclass="Security" Cgroup="STCryptoLib" Csub="Core" Cversion="5.0.0">
       <description>STM32 Cryptographic library according to the Cortex-M architecture</description>
       <files>
         <file category="library" name="lib/libSTM32Cryptographic_CM0_CM0PLUS.a" condition="M0"/>
         <file category="library" name="lib/libSTM32Cryptographic_CM3.a" condition="M3"/>
         <file category="library" name="lib/libSTM32Cryptographic_CM33.a" condition="M33"/>
         <file category="library" name="lib/libSTM32Cryptographic_CM4.a" condition="M4"/>
+        <file category="library" name="lib/libSTM32Cryptographic_CM55.a" condition="M55"/>
         <file category="library" name="lib/libSTM32Cryptographic_CM7.a" condition="M7"/>
         <file category="library" name="lib/libSTM32Cryptographic_CM85.a" condition="M85"/>
         <file category="doc" name="lib/SHA1SUM"/>
-        <file category="source" name="interfaces/cmox_crc/cmox_low_level.c" attr="config" version="1.0.0"/>
         <file category="doc" name="LICENSE.html"/>
         <file category="doc" name="LICENSE.md"/>
         <file category="doc" name="README.md"/>
@@ -192,7 +202,7 @@
       </files>
     </component>
     <!-- STCryptoLib APIs components -->
-    <component Cclass="Security" Cgroup="STCryptoLib" Csub="CMOX API" Cversion="4.0.4" condition="Crypto Core">
+    <component Cclass="Security" Cgroup="STCryptoLib" Csub="CMOX API" Cversion="5.0.0" condition="Crypto Core">
       <description>Common STCryptoLib APIs</description>
       <Pre_Include_Global_h>
 /* Enabling global cmox configuration file */
@@ -216,6 +226,7 @@
         <file category="header" name="include/cipher/cmox_cbc.h"/>
         <file category="header" name="include/cipher/cmox_ccm.h"/>
         <file category="header" name="include/cipher/cmox_cfb.h"/>
+        <file category="header" name="include/cipher/cmox_chacha20.h"/>
         <file category="header" name="include/cipher/cmox_chachapoly.h"/>
         <file category="header" name="include/cipher/cmox_check_default_aes.h"/>
         <file category="header" name="include/cipher/cmox_check_default_gcm.h"/>
@@ -254,6 +265,16 @@
         <file category="header" name="include/hash/cmox_sha512.h"/>
         <file category="header" name="include/hash/cmox_sm3.h"/>
         <file category="header" name="include/hash/cmox_sponge.h"/>
+        <!-- HBS lib APIs -->
+        <file category="include" name="include/hbs/"/>
+        <file category="header" name="include/hbs/cmox_hbs.h"/>
+        <file category="header" name="include/hbs/cmox_hbs_retvals.h"/>
+        <!-- KDF lib APIs -->
+        <file category="include" name="include/kdf/"/>
+        <file category="header" name="include/kdf/cmox_hkdf.h"/>
+        <file category="header" name="include/kdf/cmox_kdf.h"/>
+        <file category="header" name="include/kdf/cmox_kdf_retvals.h"/>
+        <file category="header" name="include/kdf/cmox_x963_kdf.h"/>
         <!-- MAC lib APIs -->
         <file category="include" name="include/mac/"/>
         <file category="header" name="include/mac/cmox_cmac.h"/>
@@ -261,6 +282,13 @@
         <file category="header" name="include/mac/cmox_kmac.h"/>
         <file category="header" name="include/mac/cmox_mac.h"/>
         <file category="header" name="include/mac/cmox_mac_retvals.h"/>
+        <!-- PQC lib APIs -->
+        <file category="include" name="include/pqc/"/>
+        <file category="header" name="include/pqc/cmox_pqc_config.h"/>
+        <file category="header" name="include/pqc/cmox_pqc_dsa.h"/>
+        <file category="header" name="include/pqc/cmox_pqc_kem.h"/>
+        <file category="header" name="include/pqc/cmox_pqc_retvals.h"/>
+        <file category="header" name="include/pqc/cmox_pqc_types.h"/>
         <!-- RSA lib APIs -->
         <file category="include" name="include/rsa/"/>
         <file category="header" name="include/rsa/cmox_rsa.h"/>
@@ -271,6 +299,7 @@
         <!-- utils lib APIs -->
         <file category="include" name="include/utils/"/>
         <file category="header" name="include/utils/cmox_utils_compare.h"/>
+        <file category="header" name="include/utils/cmox_utils_membuf.h"/>
         <file category="header" name="include/utils/cmox_utils_retvals.h"/>
       </files>
     </component>

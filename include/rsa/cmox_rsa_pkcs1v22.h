@@ -76,6 +76,36 @@ extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA512_224;
   * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
   */
 extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA512_256;
+/**
+  * @brief SHA3/224 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
+  */
+extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA3_224;
+/**
+  * @brief SHA3/256 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
+  */
+extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA3_256;
+/**
+  * @brief SHA3/384 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
+  */
+extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA3_384;
+/**
+  * @brief SHA3/512 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  Function MGF1 (as mentioned in FIPS 186-5) is used as mask generation function
+  */
+extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHA3_512;
+/**
+  * @brief SHAKE128 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  SHAKE128 is also used as mask generation function, as specified in FIPS 186-5
+  */
+extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHAKE128;
+/**
+  * @brief SHAKE256 Hash structure for the RSA PKCS#1 v2.2 functions.
+  * @note  SHAKE256 is also used as mask generation function, as specified in FIPS 186-5
+  */
+extern const cmox_rsa_pkcs1v22_hash_t CMOX_RSA_PKCS1V22_HASH_SHAKE256;
 
 /**
   * @}

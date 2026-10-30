@@ -64,6 +64,11 @@ extern "C"
   */
 #define CMOX_HASH_ERR_BAD_TAG_SIZE             ((cmox_hash_retval_t)0x00020006U)
 
+/**
+  * @brief Alternative implementation function not implemented
+  */
+#define CMOX_HASH_ERR_NO_ALT_IMPL               ((cmox_hash_retval_t)0x0002000D)
+
 /* Public types --------------------------------------------------------------*/
 
 /**

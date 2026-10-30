@@ -36,7 +36,9 @@ extern "C"
 {
 #endif /* __cplusplus */
 
-/** @addtogroup CMOX_CRYPTO
+
+/**
+  * @addtogroup CMOX_CRYPTO
   * @{
   */
 
@@ -69,6 +71,16 @@ extern "C"
   * @brief Implementation of CCM Decryption using AES.
   */
 #define CMOX_AES_CCM_DEC CMOX_AESFAST_CCM_DEC
+
+/**
+  * @brief Implementation of CCM* Encryption using AES
+  */
+#define CMOX_AES_CCM_STAR_ENC CMOX_AESFAST_CCM_STAR_ENC
+
+/**
+  * @brief Implementation of CCM* Decryption using AES
+  */
+#define CMOX_AES_CCM_STAR_DEC CMOX_AESFAST_CCM_STAR_DEC
 
 /**
   * @brief Implementation of CFB Encryption using AES.
@@ -174,7 +186,7 @@ extern "C"
   */
 #define CMOX_CMAC_AES CMOX_CMAC_AESFAST
 
-#else /* CMOX_AES_IMPLEMENTATION == CMOX_AES_SMALL */
+#elif (CMOX_AES_IMPLEMENTATION == CMOX_AES_SMALL)
 
 /**
   * @brief Implementation of CBC Encryption using AES.
@@ -196,6 +208,15 @@ extern "C"
   */
 #define CMOX_AES_CCM_DEC CMOX_AESSMALL_CCM_DEC
 
+/**
+  * @brief Implementation of CCM* Encryption using AES
+  */
+#define CMOX_AES_CCM_STAR_ENC CMOX_AESSMALL_CCM_STAR_ENC
+
+/**
+  * @brief Implementation of CCM* Decryption using AES
+  */
+#define CMOX_AES_CCM_STAR_DEC CMOX_AESSMALL_CCM_STAR_DEC
 /**
   * @brief Implementation of CFB Encryption using AES.
   */
@@ -299,6 +320,10 @@ extern "C"
   */
 #define CMOX_CMAC_AES CMOX_CMAC_AESSMALL
 
+#else
+
+#error Wrong AES implementation value
+
 #endif /* CMOX_AES_IMPLEMENTATION == CMOX_AES_FAST */
 
 /**
@@ -332,6 +357,16 @@ extern "C"
 #define CMOX_AES_CCM_DEC_ALGO CMOX_AESFAST_CCM_DEC_ALGO
 
 /**
+  * @brief Implementation of CCM Encryption using AES
+  */
+#define CMOX_AES_CCM_STAR_ENC_ALGO CMOX_AESFAST_CCM_STAR_ENC_ALGO
+
+/**
+  * @brief Implementation of CCM Decryption using AES
+  */
+#define CMOX_AES_CCM_STAR_DEC_ALGO CMOX_AESFAST_CCM_STAR_DEC_ALGO
+
+/**
   * @brief Implementation of CFB Encryption using AES.
   */
 #define CMOX_AES_CFB_ENC_ALGO CMOX_AESFAST_CFB_ENC_ALGO
@@ -339,7 +374,7 @@ extern "C"
 /**
   * @brief Implementation of CFB Decryption using AES.
   */
-#define CMOX_AES_CFB_DEC_ALGO CMOX_AESFAST_CFB_DEC_ALG
+#define CMOX_AES_CFB_DEC_ALGO CMOX_AESFAST_CFB_DEC_ALGO
 
 /**
   * @brief Implementation of CTR Encryption using AES.
@@ -373,7 +408,7 @@ extern "C"
   */
 #define CMOX_AES_GCM_DEC_ALGO CMOX_AESFAST_GCMFAST_DEC_ALGO
 
-#else /* CMOX_GCM_IMPLEMENTATION == CMOX_GCM_SMALL */
+#elif (CMOX_GCM_IMPLEMENTATION == CMOX_GCM_SMALL)
 
 /**
   * @brief Implementation of GCM Encryption using AES.
@@ -422,7 +457,7 @@ extern "C"
   */
 #define CMOX_CMAC_AES_ALGO CMOX_CMAC_AESFAST_ALGO
 
-#else /* CMOX_AES_IMPLEMENTATION == CMOX_AES_SMALL */
+#elif (CMOX_AES_IMPLEMENTATION == CMOX_AES_SMALL)
 
 /**
   * @brief Implementation of CBC Encryption using AES.
@@ -443,6 +478,16 @@ extern "C"
   * @brief Implementation of CCM Decryption using AES.
   */
 #define CMOX_AES_CCM_DEC_ALGO CMOX_AESSMALL_CCM_DEC_ALGO
+
+/**
+  * @brief Implementation of CCM Encryption using AES
+  */
+#define CMOX_AES_CCM_STAR_ENC_ALGO CMOX_AESSMALL_CCM_STAR_ENC_ALGO
+
+/**
+  * @brief Implementation of CCM Decryption using AES
+  */
+#define CMOX_AES_CCM_STAR_DEC_ALGO CMOX_AESSMALL_CCM_STAR_DEC_ALGO
 
 /**
   * @brief Implementation of CFB Encryption using AES.
@@ -535,7 +580,65 @@ extern "C"
   */
 #define CMOX_CMAC_AES_ALGO CMOX_CMAC_AESSMALL_ALGO
 
-#endif /* CMOX_AES_IMPLEMENTATION == CMOX_AES_FAST */
+#else
+
+#error Wrong AES implementation value
+
+#endif /* CMOX_PQC_IMPLEMENTATION == CMOX_PQC_FAST */
+
+
+#if (CMOX_PQC_IMPLEMENTATION == CMOX_PQC_FAST)
+
+#define CMOX_PQC_ML_DSA_44_SIGN       CMOX_PQC_ML_DSA_44_SIGN_ALGO
+
+
+#define CMOX_PQC_ML_DSA_44_DET_SIGN       CMOX_PQC_ML_DSA_44_DET_SIGN_ALGO
+
+#define CMOX_PQC_ML_DSA_44_VERIFY       CMOX_PQC_ML_DSA_44_VERIFY_ALGO
+
+
+#define CMOX_PQC_ML_DSA_65_SIGN       CMOX_PQC_ML_DSA_65_SIGN_ALGO
+
+
+#define CMOX_PQC_ML_DSA_65_DET_SIGN       CMOX_PQC_ML_DSA_65_DET_SIGN_ALGO
+
+
+#define CMOX_PQC_ML_DSA_65_VERIFY       CMOX_PQC_ML_DSA_65_VERIFY_ALGO
+
+
+#define CMOX_PQC_ML_DSA_87_SIGN       CMOX_PQC_ML_DSA_87_SIGN_ALGO
+
+
+#define CMOX_PQC_ML_DSA_87_DET_SIGN       CMOX_PQC_ML_DSA_87_DET_SIGN_ALGO
+
+
+#define CMOX_PQC_ML_DSA_87_VERIFY       CMOX_PQC_ML_DSA_87_VERIFY_ALGO
+
+#elif (CMOX_PQC_IMPLEMENTATION == CMOX_PQC_SMALL)
+
+#define CMOX_PQC_ML_DSA_44_SIGN       CMOX_PQC_ML_DSA_44_SIGN_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_44_DET_SIGN       CMOX_PQC_ML_DSA_44_DET_SIGN_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_44_VERIFY       CMOX_PQC_ML_DSA_44_VERIFY_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_65_SIGN       CMOX_PQC_ML_DSA_65_SIGN_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_65_DET_SIGN       CMOX_PQC_ML_DSA_65_DET_SIGN_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_65_VERIFY       CMOX_PQC_ML_DSA_65_VERIFY_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_87_SIGN       CMOX_PQC_ML_DSA_87_SIGN_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_87_DET_SIGN       CMOX_PQC_ML_DSA_87_DET_SIGN_LOWRAM_ALGO
+
+#define CMOX_PQC_ML_DSA_87_VERIFY       CMOX_PQC_ML_DSA_87_VERIFY_LOWRAM_ALGO
+
+#else
+
+#error Wrong PQC implementation value
+
+#endif
 
 /**
   * @}

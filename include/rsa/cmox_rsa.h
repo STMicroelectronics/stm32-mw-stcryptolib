@@ -53,8 +53,14 @@ extern "C"
   *                           This parameter can be one of the following:
   *                              @arg CMOX_MODEXP_PUBLIC
   *                              @arg CMOX_MODEXP_PRIVATE_LOWMEM
+  *                              @arg CMOX_MODEXP_PRIVATE_LOWMEM_STD
+  *                              @arg CMOX_MODEXP_PRIVATE_LOWMEM_CRT
   *                              @arg CMOX_MODEXP_PRIVATE_MIDMEM
+  *                              @arg CMOX_MODEXP_PRIVATE_MIDMEM_STD
+  *                              @arg CMOX_MODEXP_PRIVATE_MIDMEM_CRT
   *                              @arg CMOX_MODEXP_PRIVATE_HIGHMEM
+  *                              @arg CMOX_MODEXP_PRIVATE_HIGHMEM_STD
+  *                              @arg CMOX_MODEXP_PRIVATE_HIGHMEM_CRT
   * @param[in]     P_pBuf     The preallocated static buffer that will be used
   * @param[in]     P_BufLen   The size in bytes of the P_pBuf buffer
   */

@@ -343,6 +343,88 @@ extern "C"
   */
 
 /**
+  * @defgroup CMOX_PQC_FAST Fast PQC customizations
+  * @{
+  */
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 44 SIGN.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_44_SIGN_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_44_SIGN_ALGO
+  */
+#define CMOX_PQC_ML_DSA_44_SIGN       CMOX_PQC_ML_DSA_44_SIGN_ALGO
+
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 44 deterministic signature generation function.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_44_DET_SIGN_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_44_DET_SIGN_ALGO
+  */
+#define CMOX_PQC_ML_DSA_44_DET_SIGN       CMOX_PQC_ML_DSA_44_DET_SIGN_ALGO
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 44 signature verification function.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_44_VERIFY_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_44_VERIFY_ALGO
+  */
+#define CMOX_PQC_ML_DSA_44_VERIFY       CMOX_PQC_ML_DSA_44_VERIFY_ALGO
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 65 SIGN.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_65_SIGN_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_65_SIGN_ALGO
+  */
+#define CMOX_PQC_ML_DSA_65_SIGN       CMOX_PQC_ML_DSA_65_SIGN_ALGO
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 65 deterministic signature generation function.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_65_DET_SIGN_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_65_DET_SIGN_ALGO
+  */
+#define CMOX_PQC_ML_DSA_65_DET_SIGN       CMOX_PQC_ML_DSA_65_DET_SIGN_ALGO
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 65 signature verification function.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_65_VERIFY_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_65_VERIFY_ALGO
+  */
+#define CMOX_PQC_ML_DSA_65_VERIFY       CMOX_PQC_ML_DSA_65_VERIFY_ALGO
+
+/**
+   * @brief Flag indicating the low ram implementation for ML-DSA 87 SIGN.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_87_SIGN_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_87_SIGN_ALGO
+  */
+#define CMOX_PQC_ML_DSA_87_SIGN       CMOX_PQC_ML_DSA_87_SIGN_ALGO
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 87 deterministic signature generation function.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_87_DET_SIGN_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_87_DET_SIGN_ALGO
+  */
+#define CMOX_PQC_ML_DSA_87_DET_SIGN       CMOX_PQC_ML_DSA_87_DET_SIGN_ALGO
+
+/**
+   * @brief Flag indicating the ram implementation for ML-DSA 87 signature verification function.
+  * @note  Value can be
+  *        - @ref CMOX_PQC_ML_DSA_87_VERIFY_LOWRAM_ALGO
+  *        - @ref CMOX_PQC_ML_DSA_87_VERIFY_ALGO
+  */
+#define CMOX_PQC_ML_DSA_87_VERIFY       CMOX_PQC_ML_DSA_87_VERIFY_ALGO
+
+/**
+  * @}
+  */
+
+/**
   * @}
   */
 

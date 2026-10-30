@@ -23,16 +23,16 @@
 extern "C" {
 #endif
 
-/* origin-pack: STMicroelectronics::stcryptolib@2.1.0 */
+/* origin-pack: STMicroelectronics::stcryptolib@2.3.0 */
 /* file-format: 1.0.0 */
 
 /* Device headers and defines */
 
 /* RTE Content */
-#if (CMSIS_USE_Security_STCryptoLib_CMOX_API_4_0_4)
+#if (CMSIS_USE_Security_STCryptoLib_CMOX_API_5_0_0)
 /* Enabling global cmox configuration file */
 #define CMOX_DEFAULT_FILE "mx_cmox_config.h"
-#endif /* CMSIS_USE_Security_STCryptoLib_CMOX_API_4_0_4 */
+#endif /* CMSIS_USE_Security_STCryptoLib_CMOX_API_5_0_0 */
 
 #ifdef __cplusplus
 }

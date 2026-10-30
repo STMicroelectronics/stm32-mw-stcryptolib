@@ -15,16 +15,99 @@ More  documentation is available at [STCryptoLib SW Pack documentation](https://
 
 # Update History
 
+<label for="collapse-section4" aria-hidden="true">__2.3.0 / 25-Sep-2026__</label>
+<div>
+
+## Main Changes
+
+- Add PQC ML-DSA configuration.
+- Enhance code generation performance.
+- Remove support for CRC.
+- SA0085 fixed.
+
+## Contents
+
+- Precompiled ACVP certified CMOX library (**5.0.0.Build2**) optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, Cortex-M55, and Cortex-M85 cores.
+- Interfaces to access CMOX library functionalities.
+- Ready to use CMOX configuration files for fast and small profiles.
+
+## Known Limitations
+
+- None.
+
+## Development Toolchains and Compilers
+
+- IAR Embedded Workbench for ARM (EWARM) toolchain V9.60.3 + ST-LINK
+- MDK-ARM Keil uVision V5.42
+- STM32CubeIDE for Visual Studio Code (GCC13 compiler)
+- STM32CubeMX2 V1.1.1
+
+## Supported devices and boards
+
+- STM32C5 series.
+- STM32G5 series.
+- STM32H7P series.
+- STM32V8 series.
+
+## Backward Compatibility
+
+- Fully compatible with previous version.
+
+## Dependencies
+
+- None.
+
+</div>
+
+<label for="collapse-section3" aria-hidden="true">__2.2.0 / 03-July-2026__</label>
+<div>
+
+## Main Changes
+
+- Support of CMOX library V5.
+
+## Contents
+
+- Precompiled ACVP certified CMOX library (**5.0.0.Build2**) optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, Cortex-M55, and Cortex-M85 cores.
+- Interfaces to access CMOX library functionalities.
+- Ready to use CMOX configuration files for fast and small profiles.
+
+## Known Limitations
+
+- None.
+
+## Development Toolchains and Compilers
+
+- IAR Embedded Workbench for ARM (EWARM) toolchain V9.60.3 + ST-LINK
+- MDK-ARM Keil uVision V5.42
+- STM32CubeIDE for Visual Studio Code (GCC13 compiler)
+- STM32CubeMX2 V1.0.1
+
+## Supported devices and boards
+
+- STM32C5 series.
+- STM32V8 series.
+
+## Backward Compatibility
+
+- Fully compatible with previous version.
+
+## Dependencies
+
+- STM32C5xx HAL Drivers V2.0.0
+
+</div>
+
 <label for="collapse-section2" aria-hidden="true">__2.1.0 / 05-June-2026__</label>
 <div>
 
 ## Main Changes
 
-- Support of Config and Code generation features
+- Miscellaneous update of .config files
 
 ## Contents
 
-- Precompiled CMOX library optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, and Cortex-M85 cores.
+- Precompiled ACVP certified CMOX library (**v4.0.0.Build1**) optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, and Cortex-M85 cores.
 - Interfaces to access CMOX library functionalities.
 - Ready to use CMOX configuration files for fast and small profiles.
 
@@ -49,7 +132,7 @@ More  documentation is available at [STCryptoLib SW Pack documentation](https://
 
 ## Dependencies
 
-- STM32C5xx HAL Drivers V2.0.0 or greater
+- STM32C5xx HAL Drivers V2.0.0
 
 </div>
 
@@ -62,7 +145,7 @@ More  documentation is available at [STCryptoLib SW Pack documentation](https://
 
 ## Contents
 
-- Precompiled CMOX library optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, and Cortex-M85 cores.
+- Precompiled ACVP certified CMOX library (**v4.0.0.Build1**) optimized for Cortex-M0/M0+, Cortex-M3, Cortex-M4, Cortex-M7, Cortex-M33, and Cortex-M85 cores.
 - Interfaces to access CMOX library functionalities.
 - Ready to use CMOX configuration files for fast and small profiles.
 

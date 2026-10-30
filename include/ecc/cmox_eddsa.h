@@ -45,8 +45,14 @@ extern "C" {
   *                                @arg CMOX_ECC_ED25519_HIGHMEM
   *                                @arg CMOX_ECC_ED25519_OPT_LOWMEM
   *                                @arg CMOX_ECC_ED25519_OPT_HIGHMEM
+  *                                @arg CMOX_ECC_ED25519PH_LOWMEM
+  *                                @arg CMOX_ECC_ED25519PH_HIGHMEM
+  *                                @arg CMOX_ECC_ED25519PH_OPT_LOWMEM
+  *                                @arg CMOX_ECC_ED25519PH_OPT_HIGHMEM
   *                                @arg CMOX_ECC_ED448_LOWMEM
   *                                @arg CMOX_ECC_ED448_HIGHMEM
+  *                                @arg CMOX_ECC_ED448PH_LOWMEM
+  *                                @arg CMOX_ECC_ED448PH_HIGHMEM
   * @param[in]  P_pRandom       Buffer of random bytes
   * @param[in]  P_RandomLen     Byte length of the random buffer
   * @param[out] P_pPrivKey      Buffer with the private key, whose first half will be the secret value and the second
@@ -83,8 +89,14 @@ cmox_ecc_retval_t cmox_eddsa_keyGen(cmox_ecc_handle_t     *P_pEccCtx,
   *                                @arg CMOX_ECC_ED25519_HIGHMEM
   *                                @arg CMOX_ECC_ED25519_OPT_LOWMEM
   *                                @arg CMOX_ECC_ED25519_OPT_HIGHMEM
+  *                                @arg CMOX_ECC_ED25519PH_LOWMEM
+  *                                @arg CMOX_ECC_ED25519PH_HIGHMEM
+  *                                @arg CMOX_ECC_ED25519PH_OPT_LOWMEM
+  *                                @arg CMOX_ECC_ED25519PH_OPT_HIGHMEM
   *                                @arg CMOX_ECC_ED448_LOWMEM
   *                                @arg CMOX_ECC_ED448_HIGHMEM
+  *                                @arg CMOX_ECC_ED448PH_LOWMEM
+  *                                @arg CMOX_ECC_ED448PH_HIGHMEM
   * @param[in]  P_pPrivKey      Buffer with the private key, whose first half is the secret value and the second half
   *                             contains the public key
   * @param[in]  P_PrivKeyLen    Byte length of the private key
@@ -116,8 +128,14 @@ cmox_ecc_retval_t cmox_eddsa_sign(cmox_ecc_handle_t     *P_pEccCtx,
   *                                @arg CMOX_ECC_ED25519_HIGHMEM
   *                                @arg CMOX_ECC_ED25519_OPT_LOWMEM
   *                                @arg CMOX_ECC_ED25519_OPT_HIGHMEM
+  *                                @arg CMOX_ECC_ED25519PH_LOWMEM
+  *                                @arg CMOX_ECC_ED25519PH_HIGHMEM
+  *                                @arg CMOX_ECC_ED25519PH_OPT_LOWMEM
+  *                                @arg CMOX_ECC_ED25519PH_OPT_HIGHMEM
   *                                @arg CMOX_ECC_ED448_LOWMEM
   *                                @arg CMOX_ECC_ED448_HIGHMEM
+  *                                @arg CMOX_ECC_ED448PH_LOWMEM
+  *                                @arg CMOX_ECC_ED448PH_HIGHMEM
   * @param[in]  P_pPubKey       Buffer with the public key
   * @param[in]  P_PubKeyLen     Byte length of the public key
   * @param[in]  P_pMessage      Buffer with the message to verify

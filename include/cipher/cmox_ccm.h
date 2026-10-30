@@ -118,6 +118,38 @@ extern const cmox_ccm_impl_t CMOX_AESSMALL_CCM_DEC;
   * @}
   */
 
+/** @defgroup CMOX_CCM_STAR_IMPL CCM* implementations
+  * @{
+  */
+
+/**
+  * @brief Implementation of CCM* encryption using AES (fast implementation)
+  *        (Defined internally)
+  */
+extern const cmox_ccm_impl_t CMOX_AESFAST_CCM_STAR_ENC;
+
+/**
+  * @brief Implementation of CCM* decryption using AES (fast implementation)
+  *        (Defined internally)
+  */
+extern const cmox_ccm_impl_t CMOX_AESFAST_CCM_STAR_DEC;
+
+/**
+  * @brief Implementation of CCM* encryption using AES (small implementation)
+  *        (Defined internally)
+  */
+extern const cmox_ccm_impl_t CMOX_AESSMALL_CCM_STAR_ENC;
+
+/**
+  * @brief Implementation of CCM* decryption using AES (small implementation)
+  *        (Defined internally)
+  */
+extern const cmox_ccm_impl_t CMOX_AESSMALL_CCM_STAR_DEC;
+
+/**
+  * @}
+  */
+
 /** @defgroup CMOX_CCM_ALGO CCM single-call algorithms
   * @{
   */
@@ -145,6 +177,38 @@ extern const cmox_aead_algo_t CMOX_AESFAST_CCM_ENC_ALGO;
   *  for single-call function (Defined internally).
   */
 extern const cmox_aead_algo_t CMOX_AESFAST_CCM_DEC_ALGO;
+
+/**
+  * @}
+  */
+
+/** @defgroup CMOX_CCM_STAR_ALGO CCM* single-call algorithms
+  * @{
+  */
+
+/**
+  * @brief Identifier of the CCM* encryption using AES (small implementation)
+  *  for single-call function (Defined internally)
+  */
+extern const cmox_aead_algo_t CMOX_AESSMALL_CCM_STAR_ENC_ALGO;
+
+/**
+  * @brief Identifier of the CCM* decryption using AES (small implementation)
+  *  for single-call function (Defined internally)
+  */
+extern const cmox_aead_algo_t CMOX_AESSMALL_CCM_STAR_DEC_ALGO;
+
+/**
+  * @brief Identifier of the CCM* encryption using AES (fast implementation)
+  *  for single-call function (Defined internally)
+  */
+extern const cmox_aead_algo_t CMOX_AESFAST_CCM_STAR_ENC_ALGO;
+
+/**
+  * @brief Identifier of the CCM* decryption using AES (fast implementation)
+  *  for single-call function (Defined internally)
+  */
+extern const cmox_aead_algo_t CMOX_AESFAST_CCM_STAR_DEC_ALGO;
 
 /**
   * @}

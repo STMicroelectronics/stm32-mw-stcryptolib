@@ -24,6 +24,7 @@ extern "C" {
 #endif
 
 #include "ecc/cmox_ecc.h"
+#include "mac/cmox_hmac.h"
 
 /** @addtogroup CMOX_ECC
   * @{
@@ -195,6 +196,80 @@ cmox_ecc_retval_t cmox_ecdsa_sign(cmox_ecc_handle_t     *P_pEccCtx,
                                   size_t                *P_pSignatureLen);
 
 /**
+  * @brief      Deterministically generates a nonce for the deterministic ECDSA signature generation.
+  *             Use this nonce as the P_pRandom parameter of the \ref cmox_ecdsa_sign function
+  * @param[in]  P_pEccCtx       Context for ECC operations
+  * @param[in]  P_CurveParams   Curve Parameters
+  *                             This parameter can be one of the following:
+  *                                @arg CMOX_ECC_SECP224R1_LOWMEM
+  *                                @arg CMOX_ECC_SECP224R1_HIGHMEM
+  *                                @arg CMOX_ECC_SECP256R1_LOWMEM
+  *                                @arg CMOX_ECC_SECP256R1_HIGHMEM
+  *                                @arg CMOX_ECC_SECP384R1_LOWMEM
+  *                                @arg CMOX_ECC_SECP384R1_HIGHMEM
+  *                                @arg CMOX_ECC_SECP521R1_LOWMEM
+  *                                @arg CMOX_ECC_SECP521R1_HIGHMEM
+  *                                @arg CMOX_ECC_SECP256K1_LOWMEM
+  *                                @arg CMOX_ECC_SECP256K1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP160R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP160R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP192R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP192R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP224R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP224R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP256R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP256R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP320R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP320R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP384R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP384R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP512R1_LOWMEM
+  *                                @arg CMOX_ECC_BPP512R1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP160T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP160T1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP192T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP192T1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP224T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP224T1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP256T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP256T1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP320T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP320T1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP384T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP384T1_HIGHMEM
+  *                                @arg CMOX_ECC_BPP512T1_LOWMEM
+  *                                @arg CMOX_ECC_BPP512T1_HIGHMEM
+  *                                @arg CMOX_ECC_FRP256V1_LOWMEM
+  *                                @arg CMOX_ECC_FRP256V1_HIGHMEM
+  * @param[in]  P_HmacHash      The hash used to generate the digest to sign (it's used internally by the HMAC)
+  * @param[in]  P_pPrivKey      Buffer with the private key
+  * @param[in]  P_PrivKeyLen    Byte length of the private key
+  * @param[in]  P_pDigest       Buffer with the digest to sign
+  * @param[in]  P_DigestLen     Byte length of the digest
+  * @param[out] P_pNonce        Buffer with the determinist nonce
+  * @param[out] P_pNonceLen     Byte length of the determinist nonce
+  * @note The \ref P_CurveParams parameter is just used for the curve parameters, and no optimizations are done.
+  *       Therefore no difference in using a LOWMEM w.r.t a HIGHMEM.
+  * @retval     CMOX_ECC_SUCCESS                Everything OK
+  * @retval     CMOX_ECC_ERR_MATHCURVE_MISMATCH Mathematical function set is not compatible with current ECC curve
+  * @retval     CMOX_ECC_ERR_ALGOCURVE_MISMATCH Curve (or curve implementation) is not compatible with current
+  *                                             functionality
+  * @retval     CMOX_ECC_ERR_BAD_PARAMETERS     Some NULL/wrong/empty parameter or Construct API not called
+  * @retval     CMOX_ECC_ERR_MEMORY_FAIL        Not enough memory
+  * @retval     CMOX_ECC_ERR_INTERNAL           Internal Error of the HMAC-DRBG
+  * @warning    Actually does NOT support Alternative Implementations
+  */
+cmox_ecc_retval_t cmox_ecdsa_getDetNonce(cmox_ecc_handle_t     *P_pEccCtx,
+                                         const cmox_ecc_impl_t P_CurveParams,
+                                         cmox_hmac_impl_t      P_HmacHash,
+                                         const uint8_t         *P_pPrivKey,
+                                         size_t                P_PrivKeyLen,
+                                         const uint8_t         *P_pDigest,
+                                         size_t                P_DigestLen,
+                                         uint8_t               *P_pNonce,
+                                         size_t                *P_pNonceLen);
+
+/**
   * @brief      Verify a signature, using ECDSA.
   * @param[in]  P_pEccCtx       Context for ECC operations
   * @param[in]  P_CurveParams   Curve Parameters and point functions
@@ -261,6 +336,7 @@ cmox_ecc_retval_t cmox_ecdsa_sign(cmox_ecc_handle_t     *P_pEccCtx,
   *             Every comparison (both for the return value and for P_pFaultCheck) must be done against
   *             the success value, and not comparing the value with the failure value. Indeed, in presence of faults,
   *             especially P_pFaultCheck, could be a dirty value.
+  *             This variable is not used/modified in case alternative implementation is used.
   */
 cmox_ecc_retval_t cmox_ecdsa_verify(cmox_ecc_handle_t     *P_pEccCtx,
                                     const cmox_ecc_impl_t P_CurveParams,

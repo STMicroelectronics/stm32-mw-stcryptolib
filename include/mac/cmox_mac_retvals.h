@@ -61,6 +61,11 @@ extern "C"
 #define CMOX_MAC_ERR_BAD_OPERATION              ((cmox_mac_retval_t)0x00030003U)
 
 /**
+  * @brief A buffer with a wrong size has been passed to the function
+  */
+#define CMOX_MAC_ERR_BAD_INPUT_SIZE             ((cmox_mac_retval_t)0x00030005U)
+
+/**
   * @brief Authentication of the tag has been successful.
   */
 #define CMOX_MAC_AUTH_SUCCESS                   ((cmox_mac_retval_t)0x0003C726U)
@@ -69,6 +74,11 @@ extern "C"
   * @brief Authentication of the tag failed.
   */
 #define CMOX_MAC_AUTH_FAIL                      ((cmox_mac_retval_t)0x00036E93U)
+
+/**
+  * @brief Alternative implementation function not implemented
+  */
+#define CMOX_MAC_ERR_NO_ALT_IMPL                ((cmox_mac_retval_t)0x0003000D)
 
 /* Public types --------------------------------------------------------------*/
 

@@ -79,6 +79,11 @@ extern "C"
   */
 #define CMOX_CIPHER_AUTH_FAIL                ((cmox_cipher_retval_t)0x00016E93U)
 
+/**
+  * @brief Alternative implementation function not implemented
+  */
+#define CMOX_CIPHER_ERR_NO_ALT_IMPL          ((cmox_cipher_retval_t)0x0001000DU)
+
 /* Public types --------------------------------------------------------------*/
 
 /**

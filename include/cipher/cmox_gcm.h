@@ -30,8 +30,7 @@ extern "C"
 
 #include "cmox_check_default_gcm.h"
 #include "cmox_check_default_aes.h"
-
-#include "cmox_default_defs.h"
+#include "cmox_check_default_gcm.h"
 
 /** @addtogroup CMOX_CIPHER
   * @{
@@ -99,11 +98,17 @@ typedef struct
 {
   cmox_blockcipher_handle_t blockCipher; /*!< Block cipher handle */
   uint32_t iv[CMOX_CIPHER_BLOCK_SIZE];  /*!< Buffer containing the IV */
+  uint32_t initialJ0; /*!< Initial J0 */
   size_t tagLen;  /*!< Size in bytes of the authentication tag */
   size_t AdLen;   /*!< Size in bytes of the Additional Data */
   size_t payloadLen;   /*!< Processed payload size in bytes */
-  cmox_gcm_poly_t partialAuth; /*!< Partial authentication value */
-  cmox_gcm_gfmul_t gfmul;  /*!< GF mul implementation */
+  uint8_t ctr_buffer[16]; /*!< Buffer containing unprocessed encrypted counter
+                               (for bytestream support)*/
+  uint8_t ct_buffer[16]; /*!< Buffer containing unprocessed ciphertext
+                               (for bytestream support)*/
+  size_t first_buf_el;  /*!< First element of the ctr_buffer to process */
+  cmox_gcm_poly_t partialAuth;  /*!< Partial authentication value */
+  cmox_gcm_gfmul_t gfmul; /*!< GF mul implementation */
 } cmox_gcm_common_t;
 
 /**
